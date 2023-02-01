@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import { ScrollView, ViewStyle, Pressable, ScrollViewProps, ImageBackground, KeyboardAvoidingView } from 'react-native';
+import { ScrollView, ViewStyle, View, Pressable, ScrollViewProps, ImageBackground } from 'react-native';
+import { padding } from '../../utilities/styling-assets';
 import ScreenStyles from './styles';
 
 type ScreenType = {
@@ -15,16 +16,17 @@ const AppScreen: FunctionComponent<ScreenType> = ({
 }) => {
     return (
         <ImageBackground style={[ScreenStyles.imageBackground, containerStyles]} source={require('../../assets/svgs/purple-bg.svg')}>
-            <KeyboardAvoidingView style={{ flex: 1 }} behavior="height">
+            <View style={ScreenStyles.container}>
                 <ScrollView
                     showsVerticalScrollIndicator={false}
                     keyboardShouldPersistTaps="handled"
+                    contentContainerStyle={{ paddingTop: padding.screen_top, }}
                 >
-                    <Pressable style={{ flex: 1 }} onPress={onBlur}>
+                    <Pressable onPress={onBlur}>
                         {children}
                     </Pressable>
                 </ScrollView>
-            </KeyboardAvoidingView>
+            </View>
         </ImageBackground>
     );
 };

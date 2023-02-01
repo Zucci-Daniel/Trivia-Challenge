@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import { ALIGN_TYPES, COLOR_TYPES, FONT_FAMILY_TYPES, FONT_TYPES, TEXT_SIZE_TYPE } from '../../dtos';
 import { fontSz, } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
@@ -68,9 +68,11 @@ const AppText: FC<AppTextInterface> = ({
   };
 
   return (
-    <Text {...rest} style={[baseTextStyle, style]}>
-      {text}
-    </Text>
+    <TouchableOpacity activeOpacity={readonly ? 1 : .8} onPress={readonly ? () => null : () => onPress()}>
+      <Text {...rest} style={[baseTextStyle, style]}>
+        {text}
+      </Text>
+    </TouchableOpacity>
   );
 };
 

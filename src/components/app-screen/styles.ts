@@ -3,13 +3,16 @@ import {colors, padding} from '../../utilities/styling-assets';
 
 type ScreenProps = {
   imageBackground: ViewStyle;
+  container: ViewStyle;
 };
 export const ScreenStyles = StyleSheet.create<ScreenProps>({
   imageBackground: {
     flex: 1,
-    backgroundColor: colors.mainColor,
+    justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: padding.screen_top,
+    backgroundColor: colors.mainColor,
+  },
+  container: {
     paddingHorizontal: padding.small,
   },
 });

@@ -16,6 +16,7 @@ export type TEXT_SIZE_TYPE =
   | 12
   | 13
   | 14
+  | 15
   | 16
   | 18
   | 20
@@ -50,6 +51,8 @@ export type WelcomeScreenInputTypes = {
   typeOfIcon: 'difficulty' | 'star-rate';
   suffixIcon?: JSX.Element;
   value: string;
-  editable?: false;
-  onPress: () => null;
+  editable?: boolean;
+  hasDropDown?: boolean;
+  onPress: () => void;
+  onPressSuffix?: () => void;
 };

@@ -7,7 +7,7 @@ export const addMargin = (number: number) => fontSz(number ? number : 10);
 //const padding and margin extracted from figma design
 export const padding = {
   screen_top: fontSz(126),
-  small: fontSz(30),
+  small: fontSz(31),
 };
 
 export const colors = {
