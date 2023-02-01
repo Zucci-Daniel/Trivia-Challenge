@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import { ScrollView, ViewStyle, Pressable, RefreshControl, ScrollViewProps, ImageBackground, KeyboardAvoidingView } from 'react-native';
+import { ScrollView, ViewStyle, Pressable, ScrollViewProps, ImageBackground, KeyboardAvoidingView } from 'react-native';
 import ScreenStyles from './styles';
 
 type ScreenType = {
