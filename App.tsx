@@ -1,12 +1,15 @@
 import React, { FunctionComponent } from "react";
-import { View } from "react-native";
-import { ButtonBg } from "./src/constants/all-svgs";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import AppNavigator from "./src/navigation";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App: FunctionComponent = () => {
   return (
-    <View>
-      <ButtonBg />
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <AppNavigator />
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 };
 
