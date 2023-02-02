@@ -173,3 +173,12 @@ export type QuestionFooterProps = {
     'questionScreen'
   >;
 };
+
+/// request and response
+
+export type GetQuestionsPayload = {
+  // Define the shape of the payload here
+  amount: number;
+  difficulty: 'easy' | 'hard';
+  type: boolean;
+};
