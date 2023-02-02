@@ -8,7 +8,7 @@ const distance = hp(21);
 export const CloseButtonStyles = StyleSheet.create<CloseButtonStylesProps>({
   container: {
     position: 'absolute',
-    right: distance,
+    right: distance / 2,
     top: distance,
     zIndex: distance,
   },
