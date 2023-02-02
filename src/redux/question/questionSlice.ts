@@ -1,12 +1,17 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {GetQuestionsPayload} from '../../dtos';
+import {
+  AnsweredQuestionType,
+  GetQuestionsPayload,
+  QuestionType,
+} from '../../dtos';
 import {req_questions} from './questionServices';
 
 type Question = {
   loading: boolean;
   error: boolean;
   success: boolean;
-  questionsData: Array<any>;
+  questionsData: Array<QuestionType>;
+  answeredQuestions: Array<AnsweredQuestionType>;
 };
 
 const initialState: Question = {
@@ -14,6 +19,7 @@ const initialState: Question = {
   error: false,
   success: false,
   questionsData: [],
+  answeredQuestions: [],
 };
 
 export const getQuestions = createAsyncThunk(
@@ -36,6 +42,14 @@ export const questionsSlice = createSlice({
       state.success = false;
       state.error = false;
     },
+
+    setAnsweredQuestions: (state: any, {payload}) => {
+      state.answeredQuestions = [...state.answeredQuestions, payload];
+    },
+    clearArrays: (state: any) => {
+      state.questionsData = [];
+      state.answeredQuestions = [];
+    },
   },
   extraReducers: builder => {
     builder.addCase(getQuestions.pending, (state: any, action) => {
@@ -45,7 +59,6 @@ export const questionsSlice = createSlice({
       state.success = true;
       state.questionsData = action.payload.results;
       state.loading = false;
-      console.log(action.payload.results);
     });
     builder.addCase(getQuestions.rejected, (state: any, action) => {
       state.error = true;
@@ -54,5 +67,6 @@ export const questionsSlice = createSlice({
   },
 });
 
-export const {reset} = questionsSlice.actions;
+export const {reset, setAnsweredQuestions, clearArrays} =
+  questionsSlice.actions;
 export const questionReducer = questionsSlice.reducer;

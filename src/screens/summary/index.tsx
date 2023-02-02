@@ -12,63 +12,12 @@ import {
     InActiveStarIcon,
     PassedIcon,
 } from '../../constants/all-svgs';
-import { CardProps, SummaryScreenProps } from '../../dtos';
+import { AnsweredQuestionType, CardProps, SummaryScreenProps } from '../../dtos';
+import { useQuestions } from '../../hooks/useQuestions';
 import { hp } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
 import { SummaryStyles } from './styles';
 
-
-
-const summaryData = [
-    {
-        passed: true,
-        question:
-            'The retail disc of Tony Hawk’s Pro Skater 5 only comes with the tutorial.',
-        id: 1,
-    },
-    {
-        passed: false,
-        question:
-            'The retail disc of Tony Hawk’s Pro Skater 5 only comes with the tutorial.',
-        id: 2,
-    },
-    {
-        passed: false,
-        question:
-            'The retail disc of Tony Hawk’s Pro Skater 5 only comes with the tutorial.',
-        id: 3,
-    },
-    {
-        passed: true,
-        question:
-            'The retail disc of Tony Hawk’s Pro Skater 5 only comes with the tutorial.',
-        id: 4,
-    },
-    {
-        passed: true,
-        question:
-            'The retail disc of Tony Hawk’s Pro Skater 5 only comes with the tutorial.',
-        id: 5,
-    },
-    {
-        passed: false,
-        question:
-            'The retail disc of Tony Hawk’s Pro Skater 5 only comes with the tutorial.',
-        id: 6,
-    },
-    {
-        passed: false,
-        question:
-            'The retail disc of Tony Hawk’s Pro Skater 5 only comes with the tutorial.',
-        id: 7,
-    },
-    {
-        passed: true,
-        question:
-            'The retail disc of Tony Hawk’s Pro Skater 5 only comes with the tutorial.',
-        id: 8,
-    },
-];
 
 const Card: FunctionComponent<CardProps> = ({
     passed = true,
@@ -87,12 +36,20 @@ const Card: FunctionComponent<CardProps> = ({
 );
 
 
-
 const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) => {
+
+    const { answeredQuestions, questionsData, _clearArrays } = useQuestions();
+
+    const _handlePassCount = () => answeredQuestions.filter((item: AnsweredQuestionType, index) => item.passed == true).length;
+
+    const _handleClose = () => {
+        _clearArrays()
+        navigation.goBack()
+    }
 
     const Header: FunctionComponent = () => (
         <>
-            <CloseButton onClose={() => navigation.goBack()} color={colors.white} />
+            <CloseButton onClose={() => _handleClose()} color={colors.white} />
             <View style={SummaryStyles.header}>
                 <View style={SummaryStyles.header_top}>
                     <View style={SummaryStyles.avatar}>
@@ -107,8 +64,8 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
                             color="white"
                             style={{ paddingHorizontal: hp(10) }}
                         />,
-                        <AppText text={'6'} size={20} color="darkOrange" weight='Bold' style={{ lineHeight: 20 * 1.3 }} />,
-                        <AppText text={'/10'} size={12} color="white" weight='Bold' style={{ lineHeight: 18 * 1.3 }} />
+                        <AppText text={_handlePassCount()} size={20} color="darkOrange" weight='Bold' style={{ lineHeight: 20 * 1.3 }} />,
+                        <AppText text={`/${questionsData?.length}`} size={12} color="white" weight='Bold' style={{ lineHeight: 18 * 1.3 }} />
                     ]} />
                 </View>
                 <View style={SummaryStyles.star_row}>
@@ -131,11 +88,11 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
 
     const Footer: FunctionComponent = () => (
         <View style={SummaryStyles.footer}>
-            <AppButton text="PLAY AGAIN" typeOfButton="mixed" />
+            <AppButton text="PLAY AGAIN" typeOfButton="mixed" onPress={() => _handleClose()} />
         </View>
     );
 
-    const _renderItem = (item: any, index: number) => {
+    const _renderItem = (item: AnsweredQuestionType, index: number) => {
         const { question, passed } = item;
         return <Card key={index} question={question} passed={passed} />;
     };
@@ -145,8 +102,8 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
             <FlatScreen
                 typeOfSvg='purple-bg'
                 HeaderComponent={<Header />}
-                data={summaryData}
-                keyExtractor={(item, index) => item.id.toString() + index}
+                data={answeredQuestions}
+                keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item, index }) => _renderItem(item, index)}
                 ItemSeparatorComponent={() => <View style={SummaryStyles.separator} />}
                 ListFooterComponent={<Footer />}

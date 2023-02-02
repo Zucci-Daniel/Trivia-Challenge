@@ -1,7 +1,12 @@
 import {useSelector} from 'react-redux';
-import {getQuestions, reset} from '../redux/question/questionSlice';
+import {
+  clearArrays,
+  getQuestions,
+  reset,
+  setAnsweredQuestions,
+} from '../redux/question/questionSlice';
 import {RootState, useAppDispatch} from '../redux/store';
-import {GetQuestionsPayload} from '../dtos/index';
+import {AnsweredQuestionType, GetQuestionsPayload} from '../dtos/index';
 import {useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {routes} from '../constants/routes';
@@ -15,12 +20,20 @@ export const useQuestions = () => {
     string
   >;
 
-  const {error, success, loading, questionsData} = useSelector(
-    (state: RootState) => state.questionReducer,
-  );
+  const {error, success, loading, questionsData, answeredQuestions} =
+    useSelector((state: RootState) => state.questionReducer);
 
   const _getQuestions = (data: GetQuestionsPayload) => {
     dispatch(getQuestions(data));
+  };
+
+  const _setAnsweredQuestion = (data: AnsweredQuestionType) => {
+    dispatch(setAnsweredQuestions(data));
+  };
+
+  const _clearArrays = () => {
+    console.log('clearning');
+    dispatch(clearArrays());
   };
 
   useEffect(() => {
@@ -34,5 +47,13 @@ export const useQuestions = () => {
     }
   }, [error, success]);
 
-  return {_getQuestions, error, loading, questionsData};
+  return {
+    _getQuestions,
+    _setAnsweredQuestion,
+    _clearArrays,
+    error,
+    loading,
+    questionsData,
+    answeredQuestions,
+  };
 };
