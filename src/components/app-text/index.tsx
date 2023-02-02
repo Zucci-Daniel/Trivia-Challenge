@@ -13,10 +13,10 @@ const AppText: FC<AppTextProps> = ({
   weight,
   size,
   color,
-  font = 'NotoSansJP',
+  font = 'Quicksand',
   onPress = () => null,
   readonly = true,
-  align = 'left',
+  align,
   textProps,
 }) => {
   let textAlignStyle = {};
@@ -32,12 +32,12 @@ const AppText: FC<AppTextProps> = ({
       textAlignStyle = GKTextStyles.alignRight;
       break;
     default:
-      textAlignStyle = GKTextStyles.alignLeft;
+      textAlignStyle = {};
       break;
   }
 
   const textWeightStyle = {
-    fontFamily: `NotoSansJP-${weight ? weight : 'Regular'}`,
+    fontFamily: `${font}-${weight ? weight : 'Regular'}`,
   };
 
   const textSize = {

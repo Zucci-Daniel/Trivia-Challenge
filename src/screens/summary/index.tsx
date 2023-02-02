@@ -80,7 +80,7 @@ const Card: FunctionComponent<CardProps> = ({
             { backgroundColor: passed ? colors.passed_color : colors.failed_color },
         ]}>
         <View style={{ flex: 0.9 }}>
-            <AppText text={question} size={12} color="black" />
+            <AppText weight='Medium' text={question} size={12} color="summaryCardTextColor" />
         </View>
         {passed ? <PassedIcon /> : <CloseIcon fill={colors.mainColor} />}
     </View>
@@ -98,16 +98,18 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
                     <View style={SummaryStyles.avatar}>
                         <Avatar />
                     </View>
-                    <AppText
-                        text={'You scored'}
-                        size={18}
-                        color="white"
-                        style={{ paddingHorizontal: hp(10) }}
-                    />
-                    <View style={SummaryStyles.number_wrapper}>
-                        <AppText text={'6'} size={20} color="darkOrange" />
-                        <AppText text={'/10'} size={12} color="white" />
-                    </View>
+                    <AppText style={{ lineHeight: 18 * 1.3 }} text={[
+                        <AppText
+                            font='Comfortaa'
+                            weight='Bold'
+                            text={'You scored'}
+                            size={18}
+                            color="white"
+                            style={{ paddingHorizontal: hp(10) }}
+                        />,
+                        <AppText text={'6'} size={20} color="darkOrange" weight='Bold' style={{ lineHeight: 20 * 1.3 }} />,
+                        <AppText text={'/10'} size={12} color="white" weight='Bold' style={{ lineHeight: 18 * 1.3 }} />
+                    ]} />
                 </View>
                 <View style={SummaryStyles.star_row}>
                     <ActiveStarIcon />
@@ -133,9 +135,9 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
         </View>
     );
 
-    const _renderItem = (item: any) => {
+    const _renderItem = (item: any, index: number) => {
         const { question, passed } = item;
-        return <Card question={question} passed={passed} />;
+        return <Card key={index} question={question} passed={passed} />;
     };
 
     return (
@@ -144,8 +146,8 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
                 typeOfSvg='purple-bg'
                 HeaderComponent={<Header />}
                 data={summaryData}
-                keyExtractor={item => item?.id}
-                renderItem={({ item, index }) => _renderItem(item)}
+                keyExtractor={(item, index) => item.id.toString() + index}
+                renderItem={({ item, index }) => _renderItem(item, index)}
                 ItemSeparatorComponent={() => <View style={SummaryStyles.separator} />}
                 ListFooterComponent={<Footer />}
             />

@@ -34,6 +34,8 @@ export const inputFieldStyle = StyleSheet.create<InputFieldProps>({
     flex: 1,
     color: colors.input_value,
     fontSize: fontSz(14),
+    fontFamily: 'Quicksand',
+    fontWeight: '500',
   },
   labelContainer: {
     flexDirection: 'row',

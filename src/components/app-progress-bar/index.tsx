@@ -10,11 +10,14 @@ const ProgressBar: FunctionComponent<ProgressBarProps> = ({ answeredQuestions = 
 
     const width = (answeredQuestions / totalQuestions) * 100 + '%';
 
+    const formatedNumber = (number: number) => number < 10 ? '0' + number : number;
+
+
     return (
         <>
             <View style={ProgressBarStyling.number_wrapper}>
-                <AppText text={`${answeredQuestions}`} size={20} color="darkOrange" />
-                <AppText text={`/${totalQuestions}`} size={12} color="mainColor" />
+                <AppText weight='Bold' text={`${formatedNumber(answeredQuestions)}`} size={20} color="darkOrange" />
+                <AppText weight='Bold' text={`/${totalQuestions}`} size={12} color="mainColor" />
             </View>
             <View style={ProgressBarStyling.container}>
                 <View style={[ProgressBarStyling.progress, { width }]} />

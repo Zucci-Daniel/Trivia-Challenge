@@ -49,7 +49,7 @@ export const SummaryStyles = StyleSheet.create<SummaryStylesProps>({
     borderRadius: numberWrapper,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'flex-end',
+    alignItems: 'center',
   },
   star_row: {
     flexDirection: 'row',

@@ -48,7 +48,7 @@ const _renderQuestionCard = () => {
     const _renderQuestions = (question: any, index: any) => (
         <View style={QuestionScreenStyles.questionCard}>
             <View style={QuestionScreenStyles.textWrapper}>
-                <AppText text={question} align="left" size={25} color="mainColor" />
+                <AppText weight='Medium' text={question} align="left" size={25} color="mainColor" />
             </View>
         </View>
     );
@@ -72,11 +72,10 @@ const _renderQuestionCard = () => {
 
 const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) => {
 
-    const [answeredQuestions, setAnsweredQuestions] = useState<number>(7)
+    const [answeredQuestions, setAnsweredQuestions] = useState<number>(8)
 
     const Header: FunctionComponent = () => {
 
-        const questionsAnswered = answeredQuestions < 10 ? `0${answeredQuestions}` : answeredQuestions;
 
         return (
             <View style={QuestionScreenStyles.headerContainer}>
@@ -86,13 +85,14 @@ const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) 
                             text={'Entertainment: Videogames'}
                             align="center"
                             size={30}
+                            weight='Bold'
                             color="mainColor"
                             style={{ marginBottom: hp(30) }}
                         />
-                        <AppText text={'level 1'} align="center" size={13} color="mainColor" />
+                        <AppText text={'level 1'} align="center" size={13} color="mainColor" weight='Medium' style={{ letterSpacing: 13 * 0.5 }} />
                     </View>
                 </View>
-                <ProgressBar totalQuestions={dummy.length} answeredQuestions={Number(questionsAnswered)} />
+                <ProgressBar totalQuestions={dummy.length} answeredQuestions={answeredQuestions} />
             </View>
         );
     };

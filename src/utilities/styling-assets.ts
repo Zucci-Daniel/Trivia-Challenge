@@ -22,4 +22,5 @@ export const colors = {
   border_color: '#D0DBEA',
   progressContainer: '#DBDEFF',
   progressBar: '#FF7878',
+  summaryCardTextColor: '#464FAC',
 };

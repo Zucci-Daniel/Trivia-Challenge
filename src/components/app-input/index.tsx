@@ -30,7 +30,7 @@ function InputField(_props: InputFieldProps) {
             <KeyboardAvoidingView behavior="padding">
                 <View style={inputFieldStyle.labelContainer}>
                     {typeOfIcon == 'star-rate' ? <StarRate /> : <WorldCup />}
-                    <AppText text={label} size={13} color='label' align='center' style={{ marginLeft: hp(11) }} />
+                    <AppText weight='Bold' text={label} size={13} color='label' align='center' style={{ marginLeft: hp(11) }} />
                 </View>
                 <View style={inputFieldStyle.input}>
                     <TextInput

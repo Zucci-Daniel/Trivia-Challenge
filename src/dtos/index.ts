@@ -46,17 +46,19 @@ export type TEXT_SIZE_TYPE =
 export type FONT_TYPES =
   | 'Regular'
   | 'Bold'
+  | 'SemiBold'
   | 'Medium'
   | 'Black'
   | 'Light'
   | 'Thin';
 
 export type ALIGN_TYPES = 'left' | 'center' | 'right';
-export type FONT_FAMILY_TYPES = 'NotoSansJP';
+export type FONT_FAMILY_TYPES = 'Comfortaa' | 'Quicksand';
 export type COLOR_TYPES =
   | 'mainColor'
   | 'label'
   | 'input_value'
+  | 'summaryCardTextColor'
   | 'black'
   | 'white'
   | 'darkOrange';

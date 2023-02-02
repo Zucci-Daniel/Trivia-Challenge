@@ -68,7 +68,7 @@ const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) =>
         <AppScreen
             onBlur={_handleCloseDropDown}
         >
-            <AppText text={'Welcome to the'} align='center' size={26} color='white' />
+            <AppText font="Quicksand" weight="Bold" text={'Welcome to the'} align='center' size={26} color='white' />
             <Logo />
             {_renderInputs()}
             <View style={WelcomeScreenStyles.buttonContainer}>
