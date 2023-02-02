@@ -1,28 +1,28 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StarIcon } from '../../constants/all-svgs';
+import { View, Image } from 'react-native';
+import { StarIcon } from '../../constants/all-svgs/index';
+import { AnsweredQuestionType } from '../../dtos';
 
-interface Props {
-    totalQuestions: number;
-    correctAnswers: number;
+type Props = {
+    questions: Array<AnsweredQuestionType>;
+    numberOfCorrectAnswers?: number
 }
 
-const StarRating = (props: Props) => {
-    const { totalQuestions, correctAnswers } = props;
-    const rating = correctAnswers / totalQuestions;
+const StarIconComp = ({ isFilled }: { isFilled: boolean }) => {
+    return (
+        <StarIcon fill={isFilled ? 'red' : 'white'} />
+    );
+};
+
+const StarRating = ({ questions, numberOfCorrectAnswers = 3 }: Props) => {
+    const rating = numberOfCorrectAnswers / questions.length;
+    const numberOfFilledStars = Math.round(rating * 5);
 
     return (
-        <View style={{ flexDirection: 'row', width: '50%', justifyContent: 'space-around' }}>
-            {Array.from({ length: 5 }, (_, index) => {
-                const star = index + 1;
-                if (star <= rating) {
-                    return <StarIcon key={star} fill="#f1c40f" />;
-                }
-                if (star === Math.ceil(rating)) {
-                    return <StarIcon key={star} fill="#f1c40f" opacity={rating % 1} />;
-                }
-                return <StarIcon key={star} fill="#cccccc" />;
-            })}
+        <View style={{ flexDirection: 'row' }}>
+            {Array.from({ length: 5 }, (_, index) => (
+                <StarIconComp key={index} isFilled={index < numberOfFilledStars} />
+            ))}
         </View>
     );
 };

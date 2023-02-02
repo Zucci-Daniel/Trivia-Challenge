@@ -22,7 +22,7 @@ const StartQuizScreen: FunctionComponent<StartQuizScreenProps> = ({ navigation }
     const { _getQuestions, loading } = useQuestions();
 
     const [options, setOptions] = useState<GetQuestionsPayload>({
-        amount: 10,
+        amount: 4,
         difficulty: "easy",
         type: "boolean"
     })

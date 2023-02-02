@@ -197,3 +197,8 @@ export type AnsweredQuestionType = {
   passed: boolean;
   question: string;
 };
+
+export type StarRateArrayProps = {
+  id: number;
+  star: boolean;
+};

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { View } from 'react-native';
 import AppButton from '../../components/app-button';
@@ -13,7 +13,7 @@ import {
     InActiveStarIcon,
     PassedIcon,
 } from '../../constants/all-svgs';
-import { AnsweredQuestionType, CardProps, ResultScreenProps } from '../../dtos';
+import { AnsweredQuestionType, CardProps, ResultScreenProps, StarRateArrayProps } from '../../dtos';
 import { useQuestions } from '../../hooks/useQuestions';
 import { hp } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
@@ -37,6 +37,8 @@ const Card: FunctionComponent<CardProps> = ({
 );
 
 
+
+
 const ResultScreen: FunctionComponent<ResultScreenProps> = ({ navigation }) => {
 
     const { answeredQuestions, questionsData, _clearArrays } = useQuestions();
@@ -47,6 +49,33 @@ const ResultScreen: FunctionComponent<ResultScreenProps> = ({ navigation }) => {
         _clearArrays()
         navigation.goBack()
     }
+
+    const _renderStarRating = () => {
+        const arraysOfStars: Array<StarRateArrayProps> = [];
+        const maximumStar: number = 5;
+
+        const rate: number = (_handlePassCount() / questionsData?.length) * maximumStar;
+
+
+        if (rate >= 0 && rate <= maximumStar) {
+
+            for (let i: number = 1; i <= maximumStar; i++)  arraysOfStars.push({ id: i + 1, star: parseInt(`${rate / i}`) ? true : false });
+
+        }
+
+        return arraysOfStars;
+    }
+
+
+    const _renderStars = () => {
+        return _renderStarRating().map((item: StarRateArrayProps, index: number) => {
+            const { id, star } = item;
+            return star ? <ActiveStarIcon key={id} /> : <InActiveStarIcon key={id} />
+        })
+
+    }
+
+
 
     const Header: FunctionComponent = () => (
         <>
@@ -72,7 +101,7 @@ const ResultScreen: FunctionComponent<ResultScreenProps> = ({ navigation }) => {
                     ]} />
                 </View>
                 <View style={SummaryStyles.star_row}>
-                    <StarRating totalQuestions={questionsData?.length} correctAnswers={_handlePassCount()} />
+                    {_renderStars()}
                 </View>
             </View>
         </>

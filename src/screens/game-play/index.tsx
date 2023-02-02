@@ -77,6 +77,7 @@ const GamePlayScreen: FunctionComponent<GamePlayScreenProps> = ({ navigation }) 
                     showsHorizontalScrollIndicator={false}
                     alwaysBounceHorizontal={false}
                     decelerationRate={0.8}
+                    scrollEnabled={false}
                     snapToAlignment="start"
                     horizontal
                     renderItem={({ item, index }) => _renderQuestions()}

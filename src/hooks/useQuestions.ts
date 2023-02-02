@@ -32,7 +32,6 @@ export const useQuestions = () => {
   };
 
   const _clearArrays = () => {
-    console.log('clearning');
     dispatch(clearArrays());
   };
 

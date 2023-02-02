@@ -1,6 +1,5 @@
 import {StyleSheet, ViewStyle} from 'react-native';
 import {hp, SCREEN_WIDTH} from '../../utilities/fontSizes';
-import {colors, padding} from '../../utilities/styling-assets';
 
 type GamePlayScreenStylesProps = {
   footer: ViewStyle;
