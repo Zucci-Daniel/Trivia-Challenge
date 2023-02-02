@@ -8,6 +8,7 @@ import FlatScreen from '../../components/flat-screen';
 import { routes } from '../../constants/routes';
 import { QuestionFooterProps, QuestionScreenProps } from '../../dtos';
 import { hp } from '../../utilities/fontSizes';
+import { colors } from '../../utilities/styling-assets';
 import { QuestionScreenStyles } from './styles';
 
 const dummy = [
@@ -47,7 +48,7 @@ const _renderQuestionCard = () => {
     const _renderQuestions = (question: any, index: any) => (
         <View style={QuestionScreenStyles.questionCard}>
             <View style={QuestionScreenStyles.textWrapper}>
-                <AppText text={question} align="left" size={25} color="white" />
+                <AppText text={question} align="left" size={25} color="mainColor" />
             </View>
         </View>
     );
@@ -56,6 +57,7 @@ const _renderQuestionCard = () => {
         <View style={QuestionScreenStyles.questionContainer}>
             <FlatScreen
                 data={dummy}
+                showBackgroundSVG={false}
                 pagingEnabled={true}
                 showsHorizontalScrollIndicator={false}
                 alwaysBounceHorizontal={false}
@@ -84,10 +86,10 @@ const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) 
                             text={'Entertainment: Videogames'}
                             align="center"
                             size={30}
-                            color="white"
+                            color="mainColor"
                             style={{ marginBottom: hp(30) }}
                         />
-                        <AppText text={'level 1'} align="center" size={13} color="white" />
+                        <AppText text={'level 1'} align="center" size={13} color="mainColor" />
                     </View>
                 </View>
                 <ProgressBar totalQuestions={dummy.length} answeredQuestions={Number(questionsAnswered)} />
@@ -97,7 +99,7 @@ const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) 
 
     return (
         <>
-            <CloseButton color='white' onClose={() => navigation.goBack()} />
+            <CloseButton color={colors.mainColor} onClose={() => navigation.goBack()} />
             <FlatScreen
                 shouldAddPadding={false}
                 HeaderComponent={<Header />}

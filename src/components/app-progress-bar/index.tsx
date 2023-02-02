@@ -14,7 +14,7 @@ const ProgressBar: FunctionComponent<ProgressBarProps> = ({ answeredQuestions = 
         <>
             <View style={ProgressBarStyling.number_wrapper}>
                 <AppText text={`${answeredQuestions}`} size={20} color="darkOrange" />
-                <AppText text={`/${totalQuestions}`} size={12} color="white" />
+                <AppText text={`/${totalQuestions}`} size={12} color="mainColor" />
             </View>
             <View style={ProgressBarStyling.container}>
                 <View style={[ProgressBarStyling.progress, { width }]} />

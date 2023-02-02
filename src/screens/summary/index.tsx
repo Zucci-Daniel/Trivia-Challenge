@@ -141,6 +141,7 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
     return (
         <>
             <FlatScreen
+                typeOfSvg='purple-bg'
                 HeaderComponent={<Header />}
                 data={summaryData}
                 keyExtractor={item => item?.id}

@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { ScrollView, View, Pressable, ImageBackground } from 'react-native';
+import { ScrollView, View, Pressable } from 'react-native';
+import { PurpleBg } from '../../constants/all-svgs';
 import { AppScreenProps } from '../../dtos';
 import { padding } from '../../utilities/styling-assets';
 import ScreenStyles from './styles';
@@ -10,7 +11,10 @@ const AppScreen: FunctionComponent<AppScreenProps> = ({
     children, containerStyles, onBlur = () => null, disablePressable = false
 }) => {
     return (
-        <ImageBackground style={[ScreenStyles.imageBackground, containerStyles]} source={require('../../assets/svgs/purple-bg.svg')}>
+        <View style={[ScreenStyles.imageBackground, containerStyles]}>
+            <View style={ScreenStyles.absolute}>
+                <PurpleBg style={ScreenStyles.svg} />
+            </View>
             <View style={ScreenStyles.container}>
                 <ScrollView
                     showsVerticalScrollIndicator={false}
@@ -23,7 +27,7 @@ const AppScreen: FunctionComponent<AppScreenProps> = ({
                     </Pressable>}
                 </ScrollView>
             </View>
-        </ImageBackground>
+        </View>
     );
 };
 

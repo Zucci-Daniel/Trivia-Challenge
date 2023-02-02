@@ -133,6 +133,8 @@ export type FlatScreenProps = {
   HeaderComponent?: JSX.Element;
   shouldAddPadding?: boolean;
   background?: string;
+  showBackgroundSVG?: boolean;
+  typeOfSvg?: 'white-bg' | 'purple-bg';
 } & Omit<FlatListProps<any>, 'children'>;
 
 export type QuestionScreenProps = {

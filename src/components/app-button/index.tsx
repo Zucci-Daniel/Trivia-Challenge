@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { TouchableOpacity, View, ViewStyle } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { ButtonBg, PurpleButtonBg } from "../../constants/all-svgs";
 import { ButtonProps, typeOfButtonTypes } from "../../dtos";
 import AppText from "../app-text";

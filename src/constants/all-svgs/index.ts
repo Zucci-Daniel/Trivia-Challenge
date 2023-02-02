@@ -1,6 +1,7 @@
 import ButtonBg from '../../assets/svgs/button-bg.svg';
 import PurpleButtonBg from '../../assets/svgs/purple-button-bg.svg';
 import PurpleBg from '../../assets/svgs/purple-bg.svg';
+import WhiteBg from '../../assets/svgs/white-bg.svg';
 import Logo from '../../assets/svgs/logo.svg';
 import StarRate from '../../assets/svgs/star-rate.svg';
 import ActiveStarIcon from '../../assets/svgs/star-active.svg';
@@ -14,6 +15,7 @@ import Avatar from '../../assets/svgs/avatar.svg';
 export {
   Avatar,
   ButtonBg,
+  WhiteBg,
   PurpleBg,
   Logo,
   ActiveStarIcon,
