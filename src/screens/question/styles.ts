@@ -1,6 +1,6 @@
 import {StyleSheet, ViewStyle} from 'react-native';
 import {hp, SCREEN_WIDTH} from '../../utilities/fontSizes';
-import {colors} from '../../utilities/styling-assets';
+import {colors, padding} from '../../utilities/styling-assets';
 
 type QuestionScreenStylesProps = {
   footer: ViewStyle;
@@ -18,6 +18,7 @@ export const QuestionScreenStyles =
   StyleSheet.create<QuestionScreenStylesProps>({
     headerContainer: {
       padding: genericQuestionScreenPadding,
+      paddingTop: padding.screen_top,
     },
     header: {
       height: undefined,
@@ -25,6 +26,7 @@ export const QuestionScreenStyles =
     },
     container: {
       flex: 1,
+      paddingBottom: hp(26),
     },
     footer: {
       height: undefined,
