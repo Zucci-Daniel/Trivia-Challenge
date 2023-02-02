@@ -1,10 +1,12 @@
 import {StyleSheet, ViewStyle, TextStyle} from 'react-native';
-import {hp} from '../../utilities/fontSizes';
+import {fontSz, hp} from '../../utilities/fontSizes';
+import {colors} from '../../utilities/styling-assets';
 
 type ButtonStylesProps = {
   container: ViewStyle;
   svg: ViewStyle;
   view: ViewStyle;
+  normalButton: ViewStyle;
 };
 
 export const buttonStyles = StyleSheet.create<ButtonStylesProps>({
@@ -24,5 +26,13 @@ export const buttonStyles = StyleSheet.create<ButtonStylesProps>({
   },
   view: {
     position: 'absolute',
+  },
+  normalButton: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: colors.white,
+    borderWidth: 2,
+    borderColor: colors.mainColor,
+    borderRadius: fontSz(14),
   },
 });

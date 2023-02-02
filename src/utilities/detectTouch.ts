@@ -1,4 +1,4 @@
-const touch = 10;
+const touch = 20;
 
 export const detectTouch = {
   bottom: touch,

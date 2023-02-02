@@ -1,6 +1,11 @@
 import {ReactNode} from 'react';
 import {ScrollViewProps, ViewStyle} from 'react-native';
 
+export type CardProps = {
+  passed?: boolean;
+  question?: string;
+};
+
 export type ScreenType = {
   children?: ReactNode;
   screenExtraStyles?: ViewStyle;
@@ -22,9 +27,11 @@ export type TEXT_SIZE_TYPE =
   | 20
   | 22
   | 24
+  | 25
   | 26
   | 28
   | 30
+  | 31
   | 32
   | 34
   | 36;
@@ -44,7 +51,8 @@ export type COLOR_TYPES =
   | 'label'
   | 'input_value'
   | 'black'
-  | 'white';
+  | 'white'
+  | 'darkOrange';
 
 export type WelcomeScreenInputTypes = {
   label: string;

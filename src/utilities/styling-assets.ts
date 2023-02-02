@@ -14,6 +14,9 @@ export const colors = {
   white: '#fff',
   mainColor: '#4953BE',
   label: '#F7A491',
+  darkOrange: '#FF8D8D',
   input_value: '#FFFFFF',
   black: '#000',
+  failed_color: '#FFDBDB',
+  passed_color: '#FFFBFA',
 };

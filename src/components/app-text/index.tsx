@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, TextProps } from 'react-native';
 import { ALIGN_TYPES, COLOR_TYPES, FONT_FAMILY_TYPES, FONT_TYPES, TEXT_SIZE_TYPE } from '../../dtos';
 import { fontSz, } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
@@ -17,6 +17,7 @@ interface AppTextInterface {
   readonly?: boolean;
   onPress?: () => void;
   shouldTranslate?: boolean;
+  textProps?: TextProps
 }
 
 const AppText: FC<AppTextInterface> = ({
@@ -30,7 +31,8 @@ const AppText: FC<AppTextInterface> = ({
   readonly = true,
   shouldTranslate = false,
   align = 'left',
-  ...rest
+  textProps,
+  // ...rest
 }) => {
   let textAlignStyle = {};
 
@@ -69,7 +71,7 @@ const AppText: FC<AppTextInterface> = ({
 
   return (
     <TouchableOpacity activeOpacity={readonly ? 1 : .8} onPress={readonly ? () => null : () => onPress()}>
-      <Text {...rest} style={[baseTextStyle, style]}>
+      <Text {...textProps} style={[baseTextStyle, style]}>
         {text}
       </Text>
     </TouchableOpacity>

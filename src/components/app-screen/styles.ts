@@ -14,6 +14,7 @@ export const ScreenStyles = StyleSheet.create<ScreenProps>({
   },
   container: {
     paddingHorizontal: padding.small,
+    flex: 1,
   },
 });
 

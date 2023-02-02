@@ -8,11 +8,12 @@ type ScreenType = {
     background?: string;
     containerStyles?: ViewStyle,
     onBlur?: () => void;
+    disablePressable?: boolean;
 } & Omit<ScrollViewProps, 'children'>;
 
 
 const AppScreen: FunctionComponent<ScreenType> = ({
-    children, containerStyles, onBlur = () => null
+    children, containerStyles, onBlur = () => null, disablePressable = false
 }) => {
     return (
         <ImageBackground style={[ScreenStyles.imageBackground, containerStyles]} source={require('../../assets/svgs/purple-bg.svg')}>
@@ -22,9 +23,10 @@ const AppScreen: FunctionComponent<ScreenType> = ({
                     keyboardShouldPersistTaps="handled"
                     contentContainerStyle={{ paddingTop: padding.screen_top, }}
                 >
-                    <Pressable onPress={onBlur}>
+                    {disablePressable && children}
+                    {!disablePressable && <Pressable onPress={onBlur}>
                         {children}
-                    </Pressable>
+                    </Pressable>}
                 </ScrollView>
             </View>
         </ImageBackground>

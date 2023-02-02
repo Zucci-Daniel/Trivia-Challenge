@@ -70,14 +70,17 @@ const WelcomeScreen: FunctionComponent<Props> = ({ navigation }) => {
         />)
     }
 
+    const _handleCloseDropDown = () => setShowDropDown(false)
 
     return (
-        <AppScreen>
+        <AppScreen
+            onBlur={_handleCloseDropDown}
+        >
             <AppText text={'Welcome to the'} align='center' size={26} color='white' />
             <Logo />
             {renderInputs()}
             <View style={WelcomeScreenStyles.buttonContainer}>
-                <AppButton text="True" onPress={() => navigation.navigate(routes.questionScreen)} />
+                <AppButton typeOfButton="mixed" text="True" onPress={() => navigation.navigate(routes.summaryScreen)} />
             </View>
         </AppScreen >
     );
