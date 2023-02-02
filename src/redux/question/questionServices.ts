@@ -6,7 +6,9 @@ export const req_questions = async (payload: GetQuestionsPayload) => {
   const {amount, difficulty, type} = payload;
 
   const response: any = await devInstance.get(
-    `${apiList.getQuestions}?amount=${amount}&difficulty=${difficulty}&type=boolean`,
+    `${apiList.getQuestions}?amount=${
+      amount ? amount : 10
+    }&difficulty=${difficulty}&type=boolean`,
   );
   return response.data;
 };

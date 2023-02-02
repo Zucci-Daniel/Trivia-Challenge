@@ -49,26 +49,6 @@ const StartQuizScreen: FunctionComponent<StartQuizScreenProps> = ({ navigation }
 
     const { amount, difficulty, type } = options
 
-    //inputs
-    const inputs: Array<StartQuizScreenInputTypes> = [
-        {
-            label: 'Difficulty',
-            typeOfIcon: 'difficulty',
-            suffixIcon: <CaretIcon />,
-            onPressSuffix: () => setShowDropDown(!showDropDown),
-            value: difficulty,
-            editable: false,
-            hasDropDown: true
-        },
-        {
-            label: 'Amount',
-            typeOfIcon: 'star-rate',
-            value: amount.toString().replace(/[^0-9]/g, ''),//so we'll only accept numbers
-            keyboardType: 'number-pad'
-
-        },
-    ]
-
 
     const _renderInputs = () => {
         return inputs?.map(({ label, onPressSuffix, keyboardType, suffixIcon, typeOfIcon, value, editable, hasDropDown }, index) => <InputField
@@ -91,6 +71,26 @@ const StartQuizScreen: FunctionComponent<StartQuizScreenProps> = ({ navigation }
 
     const _handleCloseDropDown = () => setShowDropDown(false)
 
+
+    //inputs
+    const inputs: Array<StartQuizScreenInputTypes> = [
+        {
+            label: 'Difficulty',
+            typeOfIcon: 'difficulty',
+            suffixIcon: <CaretIcon />,
+            onPressSuffix: () => setShowDropDown(!showDropDown),
+            value: difficulty,
+            editable: false,
+            hasDropDown: true
+        },
+        {
+            label: 'Amount',
+            typeOfIcon: 'star-rate',
+            value: amount.toString().replace(/[^0-9]/g, ''),//so we'll only accept numbers
+            keyboardType: 'number-pad'
+
+        },
+    ]
 
     return (loading ? <ActivityIndicator color={colors.white} size={hp(50)} style={{ flex: 1, backgroundColor: colors.mainColor }} /> :
         <AppScreen
