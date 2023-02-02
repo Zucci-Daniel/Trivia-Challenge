@@ -1,11 +1,9 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { View } from 'react-native';
 import AppButton from '../../components/app-button';
 import CloseButton from '../../components/app-close-button';
 import AppText from '../../components/app-text';
 import FlatScreen from '../../components/flat-screen';
-import StarRating from '../../components/star-rating';
 import {
     ActiveStarIcon,
     Avatar,
