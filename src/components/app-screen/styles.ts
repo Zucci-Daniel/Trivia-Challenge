@@ -5,6 +5,7 @@ type ScreenProps = {
   imageBackground: ViewStyle;
   container: ViewStyle;
 };
+
 export const ScreenStyles = StyleSheet.create<ScreenProps>({
   imageBackground: {
     flex: 1,

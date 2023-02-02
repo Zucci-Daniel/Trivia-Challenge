@@ -1,31 +1,17 @@
 /* eslint-disable react-native/no-inline-styles */
-import { TextInput, TextInputProps, View, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
-import React, { ReactNode } from 'react';
+import { TextInput, View, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import React from 'react';
 import { inputFieldStyle } from './styles';
 import AppText from '../app-text';
 import { colors } from '../../utilities/styling-assets';
 import { StarRate, WorldCup } from '../../constants/all-svgs';
 import { fontSz, hp } from '../../utilities/fontSizes';
 import { detectTouch } from '../../utilities/detectTouch';
+import { InputFieldProps } from '../../dtos';
 
-type inputType = {
-    isError?: boolean;
-    editable?: boolean;
-    autoFocus?: boolean;
-    error?: string;
-    dropDown?: ReactNode;
-    suffixIcon?: JSX.Element | null;
-    leftSuffixIcon?: JSX.Element;
-    textInputProps?: TextInputProps;
-    label?: string;
-    value: string;
-    onPressSuffix?: () => void;
-    onPress?: () => void;
-    placeHolderColor?: string;
-    typeOfIcon?: 'difficulty' | 'star-rate'
-};
 
-function InputField(_props: inputType) {
+
+function InputField(_props: InputFieldProps) {
     const {
         textInputProps,
         label,

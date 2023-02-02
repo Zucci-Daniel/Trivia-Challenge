@@ -12,7 +12,7 @@ import {
     InActiveStarIcon,
     PassedIcon,
 } from '../../constants/all-svgs';
-import { CardProps } from '../../dtos';
+import { CardProps, SummaryScreenProps } from '../../dtos';
 import { hp } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
 import { SummaryStyles } from './styles';
@@ -87,12 +87,8 @@ const Card: FunctionComponent<CardProps> = ({
 );
 
 
-type Props = {
-    navigation: StackNavigationProp<Record<string, object | undefined>, 'summaryScreen'>
-}
 
-
-const SummaryScreen: FunctionComponent<Props> = ({ navigation }) => {
+const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) => {
 
     const Header: FunctionComponent = () => (
         <>

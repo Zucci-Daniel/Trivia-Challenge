@@ -1,21 +1,14 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import {
-    ViewStyle,
     FlatList,
-    FlatListProps, View
+    View
 } from 'react-native';
+import { FlatScreenProps } from '../../dtos';
 import { colors } from '../../utilities/styling-assets';
 import { FlatScreenStyles } from './styles';
 
-type Props = {
-    children?: ReactNode;
-    extraStyles?: ViewStyle;
-    HeaderComponent?: JSX.Element;
-    background?: string;
-} & Omit<FlatListProps<any>, 'children'>;
 
-
-const FlatScreen: FC<Props> = ({
+const FlatScreen: FC<FlatScreenProps> = ({
     children,
     extraStyles,
     background = colors.mainColor,

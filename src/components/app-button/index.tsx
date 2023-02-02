@@ -1,18 +1,12 @@
 import React, { FunctionComponent } from "react";
 import { TouchableOpacity, View, ViewStyle } from "react-native";
 import { ButtonBg, PurpleButtonBg } from "../../constants/all-svgs";
-import { colors } from "../../utilities/styling-assets";
+import { ButtonProps, typeOfButtonTypes } from "../../dtos";
 import AppText from "../app-text";
 import { buttonStyles } from "./styles";
 
-export type typeOfButtonTypes = 'purple' | 'white' | 'mixed'
 
-type ButtonProps = {
-    text: string,
-    onPress?: () => void,
-    extraStyles?: ViewStyle,
-    typeOfButton: 'purple' | 'white' | 'mixed'
-}
+
 
 const AppButton: FunctionComponent<ButtonProps> = ({ text = 'Text', onPress = () => null, typeOfButton = 'mixed', extraStyles }) => {
 

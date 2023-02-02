@@ -1,18 +1,12 @@
-import React, { FunctionComponent, ReactNode } from 'react';
-import { ScrollView, ViewStyle, View, Pressable, ScrollViewProps, ImageBackground } from 'react-native';
+import React, { FunctionComponent } from 'react';
+import { ScrollView, View, Pressable, ImageBackground } from 'react-native';
+import { AppScreenProps } from '../../dtos';
 import { padding } from '../../utilities/styling-assets';
 import ScreenStyles from './styles';
 
-type ScreenType = {
-    children?: ReactNode;
-    background?: string;
-    containerStyles?: ViewStyle,
-    onBlur?: () => void;
-    disablePressable?: boolean;
-} & Omit<ScrollViewProps, 'children'>;
 
 
-const AppScreen: FunctionComponent<ScreenType> = ({
+const AppScreen: FunctionComponent<AppScreenProps> = ({
     children, containerStyles, onBlur = () => null, disablePressable = false
 }) => {
     return (

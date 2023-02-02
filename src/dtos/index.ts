@@ -1,5 +1,12 @@
+import {StackNavigationProp} from '@react-navigation/stack';
 import {ReactNode} from 'react';
-import {ScrollViewProps, ViewStyle} from 'react-native';
+import {
+  FlatListProps,
+  ScrollViewProps,
+  TextInputProps,
+  TextProps,
+  ViewStyle,
+} from 'react-native';
 
 export type CardProps = {
   passed?: boolean;
@@ -63,4 +70,86 @@ export type WelcomeScreenInputTypes = {
   hasDropDown?: boolean;
   onPress: () => void;
   onPressSuffix?: () => void;
+};
+
+export type typeOfButtonTypes = 'purple' | 'white' | 'mixed';
+
+export type ButtonProps = {
+  text: string;
+  onPress?: () => void;
+  extraStyles?: ViewStyle;
+  typeOfButton: 'purple' | 'white' | 'mixed';
+};
+
+export type ClosButtonProps = {
+  onClose?: () => void;
+  color?: string;
+};
+
+export type InputFieldProps = {
+  isError?: boolean;
+  editable?: boolean;
+  autoFocus?: boolean;
+  error?: string;
+  dropDown?: ReactNode;
+  suffixIcon?: JSX.Element | null;
+  leftSuffixIcon?: JSX.Element;
+  textInputProps?: TextInputProps;
+  label?: string;
+  value: string;
+  onPressSuffix?: () => void;
+  onPress?: () => void;
+  placeHolderColor?: string;
+  typeOfIcon?: 'difficulty' | 'star-rate';
+};
+
+export type AppScreenProps = {
+  children?: ReactNode;
+  background?: string;
+  containerStyles?: ViewStyle;
+  onBlur?: () => void;
+  disablePressable?: boolean;
+} & Omit<ScrollViewProps, 'children'>;
+
+export type AppTextProps = {
+  text?: any | string | {};
+  style?: any;
+  color?: COLOR_TYPES;
+  align?: ALIGN_TYPES;
+  weight?: FONT_TYPES;
+  font?: FONT_FAMILY_TYPES;
+  size?: TEXT_SIZE_TYPE;
+  children?: React.ReactNode;
+  readonly?: boolean;
+  onPress?: () => void;
+  shouldTranslate?: boolean;
+  textProps?: TextProps;
+};
+
+export type FlatScreenProps = {
+  children?: ReactNode;
+  extraStyles?: ViewStyle;
+  HeaderComponent?: JSX.Element;
+  background?: string;
+} & Omit<FlatListProps<any>, 'children'>;
+
+export type QuestionScreenProps = {
+  navigation: StackNavigationProp<
+    Record<string, object | undefined>,
+    'questionScreen'
+  >;
+};
+
+export type SummaryScreenProps = {
+  navigation: StackNavigationProp<
+    Record<string, object | undefined>,
+    'summaryScreen'
+  >;
+};
+
+export type WelcomeScreenProps = {
+  navigation: StackNavigationProp<
+    Record<string, object | undefined>,
+    'welcomeScreen'
+  >;
 };

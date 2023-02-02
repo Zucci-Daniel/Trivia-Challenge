@@ -1,4 +1,3 @@
-import { StackNavigationProp } from "@react-navigation/stack";
 import React, { FunctionComponent, useState } from "react";
 import { View } from "react-native";
 import AppButton from "../../components/app-button";
@@ -7,7 +6,7 @@ import AppScreen from "../../components/app-screen";
 import AppText from "../../components/app-text";
 import { CaretIcon, Logo } from "../../constants/all-svgs";
 import { routes } from "../../constants/routes";
-import { WelcomeScreenInputTypes } from "../../dtos";
+import { WelcomeScreenInputTypes, WelcomeScreenProps } from "../../dtos";
 import { WelcomeScreenStyles } from "./styles";
 
 
@@ -17,19 +16,12 @@ const difficultyOptions = [
     'medium'
 ]
 
-
-
-type Props = {
-    navigation: StackNavigationProp<Record<string, object | undefined>, 'welcomeScreen'>
-}
-
-const WelcomeScreen: FunctionComponent<Props> = ({ navigation }) => {
+const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) => {
 
     const [showDropDown, setShowDropDown] = useState<boolean>(false);
 
     const handleSelectedOption = (text: string) => {
         setShowDropDown(false)
-        console.log(text);
     }
 
     const inputs: Array<WelcomeScreenInputTypes> = [

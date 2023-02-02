@@ -1,5 +1,5 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
-import {fontsizes, fontSz, hp} from '../../utilities/fontSizes';
+import {fontSz, hp} from '../../utilities/fontSizes';
 import {colors} from '../../utilities/styling-assets';
 
 type InputFieldProps = {
@@ -17,7 +17,7 @@ export const inputFieldStyle = StyleSheet.create<InputFieldProps>({
     backgroundColor: colors.mainColor,
     justifyContent: 'center',
     paddingHorizontal: 15,
-    borderColor: '#D0DBEA',
+    borderColor: colors.border_color,
     borderWidth: 1,
     flexDirection: 'row',
     alignItems: 'center',

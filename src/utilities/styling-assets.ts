@@ -19,4 +19,5 @@ export const colors = {
   black: '#000',
   failed_color: '#FFDBDB',
   passed_color: '#FFFBFA',
+  border_color: '#D0DBEA',
 };

@@ -6,13 +6,11 @@ import CloseButton from "../../components/app-close-button";
 import ProgressBar from "../../components/app-progress-bar";
 import AppScreen from "../../components/app-screen";
 import AppText from "../../components/app-text";
+import { QuestionScreenProps } from "../../dtos";
 import { hp, SCREEN_WIDTH } from "../../utilities/fontSizes";
 import { QuestionScreenStyles } from "./styles";
 
 
-type Props = {
-    navigation: StackNavigationProp<Record<string, object | undefined>, 'questionScreen'>
-}
 
 const dummy = [
     "What is your namesssssssssssssssssssssAAAAAsdfsdfsdfsfasdfadfa afdasf?",
@@ -20,7 +18,7 @@ const dummy = [
 ];
 
 
-const QuestionScreen: FunctionComponent<Props> = ({ navigation }) => {
+const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) => {
     const [currentQuestion, setCurrentQuestion] = useState(1);
 
     const _renderItem = (question: any, index: number) => {
@@ -51,7 +49,6 @@ const QuestionScreen: FunctionComponent<Props> = ({ navigation }) => {
                     <FlatList
                         horizontal
                         pagingEnabled={true}
-                        contentContainerStyle={{ backgroundColor: 'orange', }}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item, index) => item + index}
                         renderItem={({ item, index }) => _renderItem(item, index)}

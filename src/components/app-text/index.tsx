@@ -1,26 +1,13 @@
 import React, { FC } from 'react';
-import { TouchableOpacity, Text, TextProps } from 'react-native';
-import { ALIGN_TYPES, COLOR_TYPES, FONT_FAMILY_TYPES, FONT_TYPES, TEXT_SIZE_TYPE } from '../../dtos';
+import { TouchableOpacity, Text } from 'react-native';
+import { AppTextProps, } from '../../dtos';
 import { fontSz, } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
 import { GKTextStyles } from './styles';
 
-interface AppTextInterface {
-  text?: any | string | {};
-  style?: any;
-  color?: COLOR_TYPES;
-  align?: ALIGN_TYPES;
-  weight?: FONT_TYPES;
-  font?: FONT_FAMILY_TYPES;
-  size?: TEXT_SIZE_TYPE;
-  children?: React.ReactNode;
-  readonly?: boolean;
-  onPress?: () => void;
-  shouldTranslate?: boolean;
-  textProps?: TextProps
-}
 
-const AppText: FC<AppTextInterface> = ({
+
+const AppText: FC<AppTextProps> = ({
   text,
   style,
   weight,
@@ -29,10 +16,8 @@ const AppText: FC<AppTextInterface> = ({
   font = 'NotoSansJP',
   onPress = () => null,
   readonly = true,
-  shouldTranslate = false,
   align = 'left',
   textProps,
-  // ...rest
 }) => {
   let textAlignStyle = {};
 
