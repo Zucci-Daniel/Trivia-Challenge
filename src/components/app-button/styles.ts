@@ -28,7 +28,7 @@ export const buttonStyles = StyleSheet.create<ButtonStylesProps>({
     position: 'absolute',
   },
   normalButton: {
-    width: '100%',
+    width: '95%',
     height: '100%',
     backgroundColor: colors.white,
     borderWidth: 2,

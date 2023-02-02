@@ -97,7 +97,7 @@ const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) 
 
     return (
         <>
-            <CloseButton onClose={() => navigation.goBack()} />
+            <CloseButton color='white' onClose={() => navigation.goBack()} />
             <FlatScreen
                 shouldAddPadding={false}
                 HeaderComponent={<Header />}
