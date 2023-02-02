@@ -5,21 +5,22 @@ import {req_questions} from './questionServices';
 type Question = {
   loading: boolean;
   error: boolean;
+  success: boolean;
   questionsData: Array<any>;
 };
 
 const initialState: Question = {
   loading: false,
   error: false,
+  success: false,
   questionsData: [],
 };
 
 export const getQuestions = createAsyncThunk(
   'question/getQuestions',
   async (payload: GetQuestionsPayload) => {
-    const {amount, difficulty, type} = payload;
     try {
-      return await req_questions(amount, difficulty, type);
+      return await req_questions(payload);
     } catch (error) {
       return error.message || error.toString();
     }
@@ -30,19 +31,25 @@ export const questionsSlice = createSlice({
   name: 'question',
   initialState,
   reducers: {
-    reset: (state: any) => {},
+    reset: (state: any) => {
+      state.loading = false;
+      state.success = false;
+      state.error = false;
+    },
   },
   extraReducers: builder => {
-    builder.addCase(getQuestions.pending, (state: any) => {
-      state.isLoading = true;
+    builder.addCase(getQuestions.pending, (state: any, action) => {
+      state.loading = true;
     });
-    builder.addCase(getQuestions.fulfilled, (state: any) => {
-      state.questionsData;
-      state.isLoading = true;
+    builder.addCase(getQuestions.fulfilled, (state: any, action) => {
+      state.success = true;
+      state.questionsData = action.payload.results;
+      state.loading = false;
+      console.log(action.payload.results);
     });
-    builder.addCase(getQuestions.rejected, (state: any) => {
+    builder.addCase(getQuestions.rejected, (state: any, action) => {
       state.error = true;
-      state.isLoading = false;
+      state.loading = false;
     });
   },
 });

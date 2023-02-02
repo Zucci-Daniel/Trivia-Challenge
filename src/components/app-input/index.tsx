@@ -21,7 +21,7 @@ function InputField(_props: InputFieldProps) {
         suffixIcon,
         value,
         onPressSuffix = () => null,
-        onPress = (text: string) => null,
+        onChangeText = (text: string) => text,
         typeOfIcon = 'star-rate',
         dropDown
     } = _props;
@@ -40,7 +40,7 @@ function InputField(_props: InputFieldProps) {
                         value={value}
                         autoCapitalize="none"
                         autoFocus={autoFocus}
-                        onChangeText={(text: string) => onPress(text)}
+                        onChangeText={(text: string) => onChangeText(text)}
                         autoComplete="off"
                         {...textInputProps}
                     />

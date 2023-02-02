@@ -2,6 +2,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {ReactNode} from 'react';
 import {
   FlatListProps,
+  KeyboardType,
   ScrollViewProps,
   TextInputProps,
   TextProps,
@@ -70,8 +71,9 @@ export type WelcomeScreenInputTypes = {
   value: string;
   editable?: boolean;
   hasDropDown?: boolean;
-  onPress: () => void;
+  onChangeText?: () => void;
   onPressSuffix?: () => void;
+  keyboardType?: KeyboardType;
 };
 
 export type typeOfButtonTypes = 'purple' | 'white' | 'mixed';
@@ -101,7 +103,7 @@ export type InputFieldProps = {
   label?: string;
   value: string;
   onPressSuffix?: () => void;
-  onPress?: () => void;
+  onChangeText?: (text: string) => void;
   placeHolderColor?: string;
   typeOfIcon?: 'difficulty' | 'star-rate';
 };
@@ -180,5 +182,5 @@ export type GetQuestionsPayload = {
   // Define the shape of the payload here
   amount: number;
   difficulty: 'easy' | 'hard';
-  type: boolean;
+  type: string; //should have been boolean (true/false),but then the endpoint doesn't return any data for this unless i use "boolean"
 };
