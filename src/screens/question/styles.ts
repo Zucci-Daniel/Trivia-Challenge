@@ -18,7 +18,7 @@ export const QuestionScreenStyles =
   StyleSheet.create<QuestionScreenStylesProps>({
     headerContainer: {
       padding: genericQuestionScreenPadding,
-      paddingTop: padding.screen_top,
+      paddingTop: hp(67),
     },
     header: {
       height: undefined,
