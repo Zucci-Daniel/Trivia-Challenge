@@ -176,6 +176,16 @@ export type QuestionFooterProps = {
   >;
 };
 
+export type AnsweredQuestionType = {
+  passed: boolean;
+  question: string;
+};
+
+export type StarRateArrayProps = {
+  id: number;
+  star: boolean;
+};
+
 /// request and response
 
 export type GetQuestionsPayload = {
@@ -192,13 +202,4 @@ export type QuestionType = {
   incorrect_answers: Array<string>;
   question: string;
   type: string;
-};
-export type AnsweredQuestionType = {
-  passed: boolean;
-  question: string;
-};
-
-export type StarRateArrayProps = {
-  id: number;
-  star: boolean;
 };

@@ -63,7 +63,7 @@ const StartQuizScreen: FunctionComponent<StartQuizScreenProps> = ({ navigation }
         {
             label: 'Amount',
             typeOfIcon: 'star-rate',
-            value: amount.toString(),
+            value: amount.toString().replace(/[^0-9]/g, ''),//so we'll only accept numbers
             keyboardType: 'number-pad'
 
         },
