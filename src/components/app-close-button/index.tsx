@@ -8,9 +8,10 @@ import { CloseButtonStyles } from "./styles";
 
 
 
-const CloseButton: FunctionComponent<ClosButtonProps> = ({ onClose = () => null, color = colors.mainColor }) => {
+
+const CloseButton: FunctionComponent<ClosButtonProps> = ({ onClose = () => null, color = colors.mainColor, extraStyles }) => {
     return (
-        <TouchableOpacity hitSlop={detectTouch} onPress={onClose} style={CloseButtonStyles.container}>
+        <TouchableOpacity hitSlop={detectTouch} onPress={onClose} style={[CloseButtonStyles.container, extraStyles]}>
             <CloseIcon fill={color} />
         </TouchableOpacity>
     );

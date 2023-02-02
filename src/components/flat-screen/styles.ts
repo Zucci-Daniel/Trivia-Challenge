@@ -10,6 +10,6 @@ export const FlatScreenStyles = StyleSheet.create<FlatScreenStylesProps>({
   container: {
     flex: 1,
     backgroundColor: colors.mainColor,
-    padding: hp(30),
+    paddingVertical: hp(30),
   },
 });

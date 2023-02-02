@@ -1,68 +1,112 @@
-import { StackNavigationProp } from "@react-navigation/stack";
-import React, { FunctionComponent, useState } from "react";
-import { FlatList, Text, View } from "react-native";
-import AppButton from "../../components/app-button";
-import CloseButton from "../../components/app-close-button";
-import ProgressBar from "../../components/app-progress-bar";
-import AppScreen from "../../components/app-screen";
-import AppText from "../../components/app-text";
-import { QuestionScreenProps } from "../../dtos";
-import { hp, SCREEN_WIDTH } from "../../utilities/fontSizes";
-import { QuestionScreenStyles } from "./styles";
-
-
+import React, { FunctionComponent, useState } from 'react';
+import { View } from 'react-native';
+import AppButton from '../../components/app-button';
+import CloseButton from '../../components/app-close-button';
+import ProgressBar from '../../components/app-progress-bar';
+import AppText from '../../components/app-text';
+import FlatScreen from '../../components/flat-screen';
+import { QuestionFooterProps } from '../../dtos';
+import { hp } from '../../utilities/fontSizes';
+import { QuestionScreenStyles } from './styles';
 
 const dummy = [
-    "What is your namesssssssssssssssssssssAAAAAsdfsdfsdfsfasdfadfa afdasf?",
-    "csdcasdf afasdfasdfasdfasdfasdfasdf asfasdfasdfasdfasdfasdf",
+    'The retail discof Tony Hawks Pro Skater 5 only comes with the tutorial?',
+    'csdcasdf afasdfasdfasdfasdfasdfasdf asfasdfasdfasdf asdfasdf',
+    'The retail discof Tony Hawks Pro Skater 5 only comes with the tutorial?',
+    'csdcasdf afasdfasdfasdfasdfasdfasdf asfasdfasdfasdf asdfasdf',
+    'The retail discof Tony Hawks Pro Skater 5 only comes with the tutorial?',
+    'csdcasdf afasdfasdfasdfasdfasdfasdf asfasdfasdfasdf asdfasdf',
+    'The retail discof Tony Hawks Pro Skater 5 only comes with the tutorial?',
+    'csdcasdf afasdfasdfasdfasdfasdfasdf asfasdfasdfasdf asdfasdf',
+    'The retail discof Tony Hawks Pro Skater 5 only comes with the tutorial?',
+    'csdcasdf afasdfasdfasdfasdfasdfasdf asfasdfasdfasdf asdfasdf',
+    'The retail discof Tony Hawks Pro Skater 5 only comes with the tutorial?',
+    'csdcasdf afasdfasdfasdfasdfasdfasdf asfasdfasdfasdf asdfasdf',
+    'The retail discof Tony Hawks Pro Skater 5 only comes with the tutorial?',
+    'csdcasdf afasdfasdfasdfasdfasdfasdf asfasdfasdfasdf asdfasdf',
 ];
 
 
-const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) => {
-    const [currentQuestion, setCurrentQuestion] = useState(1);
 
-    const _renderItem = (question: any, index: number) => {
-        return <View style={{ height: 100, width: SCREEN_WIDTH, backgroundColor: 'black', marginHorizontal: 10, }}>
-            <Text numberOfLines={2}>{question}</Text>
+const Footer: FunctionComponent<QuestionFooterProps> = ({ onPressFalse, onPressTrue }) => {
+    return (
+        <View style={QuestionScreenStyles.footer}>
+            <AppButton
+                typeOfButton="purple"
+                text="True"
+                onPress={() => onPressTrue()}
+                extraStyles={{ marginBottom: hp(10) }}
+            />
+            <AppButton typeOfButton="white" text="false" onPress={() => onPressFalse()} />
         </View>
-    }
+    );
+};
 
+const _renderQuestionCard = () => {
+    const _renderQuestions = (question: any, index: any) => (
+        <View style={QuestionScreenStyles.questionCard}>
+            <View style={QuestionScreenStyles.textWrapper}>
+                <AppText text={question} align="left" size={25} color="white" />
+            </View>
+        </View>
+    );
 
-    const getCurrentIndex = (event: any) => {
-        const index = Math.floor(
-            event.nativeEvent.contentOffset.x /
-            event.nativeEvent.layoutMeasurement.width,
+    return (
+        <View style={QuestionScreenStyles.questionContainer}>
+            <FlatScreen
+                data={dummy}
+                pagingEnabled={true}
+                showsHorizontalScrollIndicator={false}
+                alwaysBounceHorizontal={false}
+                decelerationRate={0.8}
+                snapToAlignment="start"
+                horizontal
+                renderItem={({ item, index }) => _renderQuestions(item, index)}
+            />
+        </View>
+    );
+};
+
+const QuestionScreen: FunctionComponent = () => {
+
+    const [answeredQuestions, setAnsweredQuestions] = useState<number>(7)
+
+    const Header: FunctionComponent = () => {
+
+        const questionsAnswered = answeredQuestions < 10 ? `0${answeredQuestions}` : answeredQuestions;
+
+        return (
+            <View style={QuestionScreenStyles.headerContainer}>
+                <View style={QuestionScreenStyles.header}>
+                    <View style={QuestionScreenStyles.container}>
+                        <AppText
+                            text={'Entertainment: Videogames'}
+                            align="center"
+                            size={30}
+                            color="white"
+                            style={{ marginBottom: hp(30) }}
+                        />
+                        <AppText text={'level 1'} align="center" size={13} color="white" />
+                    </View>
+                </View>
+                <ProgressBar totalQuestions={dummy.length} answeredQuestions={Number(questionsAnswered)} />
+            </View>
         );
-        setCurrentQuestion(index + 1);
     };
 
     return (
         <>
-            <CloseButton onClose={() => navigation.goBack()} />
-            <AppScreen disablePressable>
-                <View style={QuestionScreenStyles.container}>
-                    <AppText text={'Entertainment: Videogames'} align='center' size={30} color='white' style={{ marginBottom: hp(30) }} />
-                    <AppText text={'level 1'} align='center' size={13} color='white' />
-                </View>
-                <ProgressBar />
-                <View style={QuestionScreenStyles.container}>
-                    <FlatList
-                        horizontal
-                        pagingEnabled={true}
-                        showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item, index) => item + index}
-                        renderItem={({ item, index }) => _renderItem(item, index)}
-                        data={dummy}
-                        snapToAlignment="center"
-                        decelerationRate={0.8}
-                        onMomentumScrollEnd={event => getCurrentIndex(event)}
-                    />
-                </View>
-                <View style={QuestionScreenStyles.buttonContainer}>
-                    <AppButton typeOfButton="purple" text="True" onPress={() => null} extraStyles={{ marginBottom: hp(10) }} />
-                    <AppButton typeOfButton="white" text="False" onPress={() => null} />
-                </View>
-            </AppScreen>
+            <CloseButton />
+            <FlatScreen
+                shouldAddPadding={false}
+                HeaderComponent={<Header />}
+                ListFooterComponent={<Footer
+                    onPressFalse={() => console.log('false')}
+                    onPressTrue={() => console.log('true')}
+                />}
+                data={['']}
+                renderItem={({ item, index }) => _renderQuestionCard()}
+            />
         </>
     );
 };

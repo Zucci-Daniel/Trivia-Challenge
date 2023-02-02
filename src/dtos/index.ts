@@ -84,6 +84,7 @@ export type ButtonProps = {
 export type ClosButtonProps = {
   onClose?: () => void;
   color?: string;
+  extraStyles?: ViewStyle;
 };
 
 export type InputFieldProps = {
@@ -130,6 +131,7 @@ export type FlatScreenProps = {
   children?: ReactNode;
   extraStyles?: ViewStyle;
   HeaderComponent?: JSX.Element;
+  shouldAddPadding?: boolean;
   background?: string;
 } & Omit<FlatListProps<any>, 'children'>;
 
@@ -152,4 +154,14 @@ export type WelcomeScreenProps = {
     Record<string, object | undefined>,
     'welcomeScreen'
   >;
+};
+
+export type ProgressBarProps = {
+  answeredQuestions?: number;
+  totalQuestions?: number;
+};
+
+export type QuestionFooterProps = {
+  onPressTrue: () => void;
+  onPressFalse: () => void;
 };

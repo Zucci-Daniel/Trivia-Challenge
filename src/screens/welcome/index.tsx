@@ -20,7 +20,7 @@ const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) =>
 
     const [showDropDown, setShowDropDown] = useState<boolean>(false);
 
-    const handleSelectedOption = (text: string) => {
+    const _handleSelectedOption = (text: string) => {
         setShowDropDown(false)
     }
 
@@ -44,7 +44,7 @@ const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) =>
     ]
 
 
-    const renderInputs = () => {
+    const _renderInputs = () => {
         return inputs?.map(({ label, onPress, onPressSuffix, suffixIcon, typeOfIcon, value, editable, hasDropDown }, index) => <InputField
             key={index}
             label={label}
@@ -56,7 +56,7 @@ const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) =>
             onPress={onPress}
             dropDown={(hasDropDown && showDropDown) && <>
                 <View style={WelcomeScreenStyles.dropDown}>
-                    {difficultyOptions?.map((text, index) => <AppText onPress={() => handleSelectedOption(text)} readonly={false} key={index} size={15} color='black' text={text} style={WelcomeScreenStyles.options} />)}
+                    {difficultyOptions?.map((text, index) => <AppText onPress={() => _handleSelectedOption(text)} readonly={false} key={index} size={15} color='black' text={text} style={WelcomeScreenStyles.options} />)}
                 </View>
             </>}
         />)
@@ -70,9 +70,9 @@ const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) =>
         >
             <AppText text={'Welcome to the'} align='center' size={26} color='white' />
             <Logo />
-            {renderInputs()}
+            {_renderInputs()}
             <View style={WelcomeScreenStyles.buttonContainer}>
-                <AppButton typeOfButton="mixed" text="True" onPress={() => navigation.navigate(routes.summaryScreen)} />
+                <AppButton typeOfButton="mixed" text="True" onPress={() => navigation.navigate(routes.questionScreen)} />
             </View>
         </AppScreen >
     );

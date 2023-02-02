@@ -4,6 +4,7 @@ import {
     View
 } from 'react-native';
 import { FlatScreenProps } from '../../dtos';
+import { hp } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
 import { FlatScreenStyles } from './styles';
 
@@ -13,11 +14,12 @@ const FlatScreen: FC<FlatScreenProps> = ({
     extraStyles,
     background = colors.mainColor,
     HeaderComponent,
+    shouldAddPadding = true,
     ...flatListProps
 }) => {
 
     return (
-        <View style={FlatScreenStyles.container}>
+        <View style={[FlatScreenStyles.container, { paddingHorizontal: shouldAddPadding ? hp(30) : 0 }]}>
             <FlatList
                 keyboardShouldPersistTaps="always"
                 showsVerticalScrollIndicator={false}

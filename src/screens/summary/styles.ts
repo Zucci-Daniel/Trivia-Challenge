@@ -13,6 +13,8 @@ type SummaryStylesProps = {
   separator: ViewStyle;
 };
 
+const numberWrapper = hp(32);
+
 export const SummaryStyles = StyleSheet.create<SummaryStylesProps>({
   card: {
     height: undefined,
@@ -33,18 +35,18 @@ export const SummaryStyles = StyleSheet.create<SummaryStylesProps>({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: hp(19),
+    paddingVertical: hp(9),
   },
   avatar: {
-    height: hp(32),
-    width: hp(32),
-    borderRadius: hp(32),
+    height: numberWrapper,
+    width: numberWrapper,
+    borderRadius: numberWrapper,
     backgroundColor: colors.white,
   },
   number_wrapper: {
-    height: hp(32),
-    width: hp(32),
-    borderRadius: hp(32),
+    height: numberWrapper,
+    width: numberWrapper,
+    borderRadius: numberWrapper,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end',
@@ -53,7 +55,7 @@ export const SummaryStyles = StyleSheet.create<SummaryStylesProps>({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: hp(19),
+    paddingBottom: hp(19),
   },
   footer: {
     justifyContent: 'center',

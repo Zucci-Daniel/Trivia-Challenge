@@ -56,7 +56,7 @@ const AppText: FC<AppTextProps> = ({
 
   return (
     <TouchableOpacity activeOpacity={readonly ? 1 : .8} onPress={readonly ? () => null : () => onPress()}>
-      <Text {...textProps} style={[baseTextStyle, style]}>
+      <Text {...textProps} numberOfLines={5} style={[baseTextStyle, style]}>
         {text}
       </Text>
     </TouchableOpacity>
