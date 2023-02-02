@@ -5,6 +5,7 @@ import AppButton from '../../components/app-button';
 import CloseButton from '../../components/app-close-button';
 import AppText from '../../components/app-text';
 import FlatScreen from '../../components/flat-screen';
+import StarRating from '../../components/star-rating';
 import {
     ActiveStarIcon,
     Avatar,
@@ -69,18 +70,7 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
                     ]} />
                 </View>
                 <View style={SummaryStyles.star_row}>
-                    <ActiveStarIcon />
-                    <ActiveStarIcon />
-                    <ActiveStarIcon />
-                    <ActiveStarIcon />
-                    <ActiveStarIcon />
-                    <ActiveStarIcon />
-                    <InActiveStarIcon />
-                    <InActiveStarIcon />
-                    <InActiveStarIcon />
-                    <InActiveStarIcon />
-                    <InActiveStarIcon />
-                    <InActiveStarIcon />
+                    <StarRating totalQuestions={questionsData?.length} correctAnswers={_handlePassCount()} />
                 </View>
             </View>
         </>

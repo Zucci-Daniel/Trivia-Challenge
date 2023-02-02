@@ -5,6 +5,7 @@ import WhiteBg from '../../assets/svgs/white-bg.svg';
 import Logo from '../../assets/svgs/logo.svg';
 import StarRate from '../../assets/svgs/star-rate.svg';
 import ActiveStarIcon from '../../assets/svgs/star-active.svg';
+import StarIcon from '../../assets/svgs/star-active.svg';
 import InActiveStarIcon from '../../assets/svgs/star-inactive.svg';
 import WorldCup from '../../assets/svgs/worldcup.svg';
 import CaretIcon from '../../assets/svgs/caret-down.svg';
@@ -20,6 +21,7 @@ export {
   Logo,
   ActiveStarIcon,
   InActiveStarIcon,
+  StarIcon,
   StarRate,
   WorldCup,
   CaretIcon,
