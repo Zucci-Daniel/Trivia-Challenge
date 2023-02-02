@@ -5,7 +5,8 @@ import CloseButton from '../../components/app-close-button';
 import ProgressBar from '../../components/app-progress-bar';
 import AppText from '../../components/app-text';
 import FlatScreen from '../../components/flat-screen';
-import { QuestionFooterProps } from '../../dtos';
+import { routes } from '../../constants/routes';
+import { QuestionFooterProps, QuestionScreenProps } from '../../dtos';
 import { hp } from '../../utilities/fontSizes';
 import { QuestionScreenStyles } from './styles';
 
@@ -28,13 +29,13 @@ const dummy = [
 
 
 
-const Footer: FunctionComponent<QuestionFooterProps> = ({ onPressFalse, onPressTrue }) => {
+const Footer: FunctionComponent<QuestionFooterProps> = ({ onPressFalse, onPressTrue, navigation }) => {
     return (
         <View style={QuestionScreenStyles.footer}>
             <AppButton
                 typeOfButton="purple"
                 text="True"
-                onPress={() => onPressTrue()}
+                onPress={() => navigation.navigate(routes.summaryScreen)}
                 extraStyles={{ marginBottom: hp(10) }}
             />
             <AppButton typeOfButton="white" text="false" onPress={() => onPressFalse()} />
@@ -67,7 +68,7 @@ const _renderQuestionCard = () => {
     );
 };
 
-const QuestionScreen: FunctionComponent = () => {
+const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) => {
 
     const [answeredQuestions, setAnsweredQuestions] = useState<number>(7)
 
@@ -96,11 +97,12 @@ const QuestionScreen: FunctionComponent = () => {
 
     return (
         <>
-            <CloseButton />
+            <CloseButton onClose={() => navigation.goBack()} />
             <FlatScreen
                 shouldAddPadding={false}
                 HeaderComponent={<Header />}
                 ListFooterComponent={<Footer
+                    navigation={navigation}
                     onPressFalse={() => console.log('false')}
                     onPressTrue={() => console.log('true')}
                 />}

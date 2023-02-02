@@ -164,4 +164,8 @@ export type ProgressBarProps = {
 export type QuestionFooterProps = {
   onPressTrue: () => void;
   onPressFalse: () => void;
+  navigation: StackNavigationProp<
+    Record<string, object | undefined>,
+    'questionScreen'
+  >;
 };
