@@ -1,5 +1,5 @@
+import React, { FunctionComponent, useState } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
-import React, { FunctionComponent } from 'react';
 import { View } from 'react-native';
 import AppButton from '../../components/app-button';
 import CloseButton from '../../components/app-close-button';
@@ -13,7 +13,7 @@ import {
     InActiveStarIcon,
     PassedIcon,
 } from '../../constants/all-svgs';
-import { AnsweredQuestionType, CardProps, SummaryScreenProps } from '../../dtos';
+import { AnsweredQuestionType, CardProps, ResultScreenProps } from '../../dtos';
 import { useQuestions } from '../../hooks/useQuestions';
 import { hp } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
@@ -37,11 +37,11 @@ const Card: FunctionComponent<CardProps> = ({
 );
 
 
-const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) => {
+const ResultScreen: FunctionComponent<ResultScreenProps> = ({ navigation }) => {
 
     const { answeredQuestions, questionsData, _clearArrays } = useQuestions();
 
-    const _handlePassCount = () => answeredQuestions.filter((item: AnsweredQuestionType, index) => item.passed == true).length;
+    const _handlePassCount = () => answeredQuestions.filter((item: AnsweredQuestionType, index: number) => item.passed == true).length;
 
     const _handleClose = () => {
         _clearArrays()
@@ -58,6 +58,7 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
                     </View>
                     <AppText style={{ lineHeight: 18 * 1.3 }} text={[
                         <AppText
+                            key={0}
                             font='Comfortaa'
                             weight='Bold'
                             text={'You scored'}
@@ -65,8 +66,9 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
                             color="white"
                             style={{ paddingHorizontal: hp(10) }}
                         />,
-                        <AppText text={_handlePassCount()} size={20} color="darkOrange" weight='Bold' style={{ lineHeight: 20 * 1.3 }} />,
-                        <AppText text={`/${questionsData?.length}`} size={12} color="white" weight='Bold' style={{ lineHeight: 18 * 1.3 }} />
+
+                        < AppText key={1} text={_handlePassCount()} size={20} color="darkOrange" weight='Bold' style={{ lineHeight: 20 * 1.3 }} />,
+                        <AppText key={2} text={`/${questionsData?.length}`} size={12} color="white" weight='Bold' style={{ lineHeight: 18 * 1.3 }} />
                     ]} />
                 </View>
                 <View style={SummaryStyles.star_row}>
@@ -102,4 +104,4 @@ const SummaryScreen: FunctionComponent<SummaryScreenProps> = ({ navigation }) =>
     );
 };
 
-export default SummaryScreen;
+export default ResultScreen;

@@ -6,17 +6,17 @@ import ProgressBar from '../../components/app-progress-bar';
 import AppText from '../../components/app-text';
 import FlatScreen from '../../components/flat-screen';
 import { routes } from '../../constants/routes';
-import { AnsweredQuestionType, QuestionFooterProps, QuestionScreenProps } from '../../dtos';
+import { AnsweredQuestionType, QuestionFooterProps, GamePlayScreenProps } from '../../dtos';
 import { useQuestions } from '../../hooks/useQuestions';
 import { hp } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
-import { QuestionScreenStyles } from './styles';
+import { GamePlayScreenStyles } from './styles';
 
 
 
 const Footer: FunctionComponent<QuestionFooterProps> = ({ onPressFalse, onPressTrue }) => {
     return (
-        <View style={QuestionScreenStyles.footer}>
+        <View style={GamePlayScreenStyles.footer}>
             <AppButton
                 typeOfButton="purple"
                 text="True"
@@ -29,7 +29,7 @@ const Footer: FunctionComponent<QuestionFooterProps> = ({ onPressFalse, onPressT
 };
 
 
-const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) => {
+const GamePlayScreen: FunctionComponent<GamePlayScreenProps> = ({ navigation }) => {
 
     const { questionsData, _setAnsweredQuestion } = useQuestions();
     const [answeredQuestions, setAnsweredQuestions] = useState<number>(0)
@@ -39,9 +39,9 @@ const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) 
 
     const Header: FunctionComponent = () => {
         return (
-            <View style={QuestionScreenStyles.headerContainer}>
-                <View style={QuestionScreenStyles.header}>
-                    <View style={QuestionScreenStyles.container}>
+            <View style={GamePlayScreenStyles.headerContainer}>
+                <View style={GamePlayScreenStyles.header}>
+                    <View style={GamePlayScreenStyles.container}>
                         <AppText
                             text={questions?.category}
                             align="center"
@@ -61,15 +61,15 @@ const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) 
 
     const _renderQuestionCard = () => {
         const _renderQuestions = () => (
-            <View style={QuestionScreenStyles.questionCard}>
-                <View style={QuestionScreenStyles.textWrapper}>
+            <View style={GamePlayScreenStyles.questionCard}>
+                <View style={GamePlayScreenStyles.textWrapper}>
                     <AppText weight='Medium' text={questions?.question} align="left" size={25} color="mainColor" />
                 </View>
             </View>
         );
 
         return (
-            <View style={QuestionScreenStyles.questionContainer}>
+            <View style={GamePlayScreenStyles.questionContainer}>
                 <FlatScreen
                     data={questionsData}
                     showBackgroundSVG={false}
@@ -98,7 +98,7 @@ const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) 
 
         if ((answeredQuestions + 1) > questionsData.length - 1) {
             action()
-            navigation.replace(routes.summaryScreen)
+            navigation.replace(routes.ResultScreen)
         }
         else {
             action()
@@ -124,4 +124,4 @@ const QuestionScreen: FunctionComponent<QuestionScreenProps> = ({ navigation }) 
     );
 };
 
-export default QuestionScreen;
+export default GamePlayScreen;

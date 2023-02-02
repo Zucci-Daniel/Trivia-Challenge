@@ -64,7 +64,7 @@ export type COLOR_TYPES =
   | 'white'
   | 'darkOrange';
 
-export type WelcomeScreenInputTypes = {
+export type StartQuizScreenInputTypes = {
   label: string;
   typeOfIcon: 'difficulty' | 'star-rate';
   suffixIcon?: JSX.Element;
@@ -141,24 +141,24 @@ export type FlatScreenProps = {
   typeOfSvg?: 'white-bg' | 'purple-bg';
 } & Omit<FlatListProps<any>, 'children'>;
 
-export type QuestionScreenProps = {
+export type GamePlayScreenProps = {
   navigation: StackNavigationProp<
     Record<string, object | undefined>,
-    'questionScreen'
+    'GamePlayScreen'
   >;
 };
 
-export type SummaryScreenProps = {
+export type ResultScreenProps = {
   navigation: StackNavigationProp<
     Record<string, object | undefined>,
-    'summaryScreen'
+    'ResultScreen'
   >;
 };
 
-export type WelcomeScreenProps = {
+export type StartQuizScreenProps = {
   navigation: StackNavigationProp<
     Record<string, object | undefined>,
-    'welcomeScreen'
+    'StartQuizScreen'
   >;
 };
 
@@ -172,7 +172,7 @@ export type QuestionFooterProps = {
   onPressFalse: () => void;
   navigation: StackNavigationProp<
     Record<string, object | undefined>,
-    'questionScreen'
+    'GamePlayScreen'
   >;
 };
 

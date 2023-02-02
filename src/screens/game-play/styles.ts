@@ -2,7 +2,7 @@ import {StyleSheet, ViewStyle} from 'react-native';
 import {hp, SCREEN_WIDTH} from '../../utilities/fontSizes';
 import {colors, padding} from '../../utilities/styling-assets';
 
-type QuestionScreenStylesProps = {
+type GamePlayScreenStylesProps = {
   footer: ViewStyle;
   header: ViewStyle;
   headerContainer: ViewStyle;
@@ -12,12 +12,12 @@ type QuestionScreenStylesProps = {
   textWrapper: ViewStyle;
 };
 
-const genericQuestionScreenPadding = hp(26);
+const genericGamePlayScreenPadding = hp(26);
 
-export const QuestionScreenStyles =
-  StyleSheet.create<QuestionScreenStylesProps>({
+export const GamePlayScreenStyles =
+  StyleSheet.create<GamePlayScreenStylesProps>({
     headerContainer: {
-      padding: genericQuestionScreenPadding,
+      padding: genericGamePlayScreenPadding,
       paddingTop: hp(67),
     },
     header: {
@@ -30,7 +30,7 @@ export const QuestionScreenStyles =
     },
     footer: {
       height: undefined,
-      padding: genericQuestionScreenPadding,
+      padding: genericGamePlayScreenPadding,
       width: '100%',
     },
     questionContainer: {

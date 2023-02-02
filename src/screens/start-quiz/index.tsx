@@ -5,8 +5,8 @@ import InputField from "../../components/app-input";
 import AppScreen from "../../components/app-screen";
 import AppText from "../../components/app-text";
 import { CaretIcon, Logo } from "../../constants/all-svgs";
-import { GetQuestionsPayload, WelcomeScreenInputTypes, WelcomeScreenProps } from "../../dtos";
-import { WelcomeScreenStyles } from "./styles";
+import { GetQuestionsPayload, StartQuizScreenInputTypes, StartQuizScreenProps } from "../../dtos";
+import { StartQuizScreenStyles } from "./styles";
 import { useQuestions } from '../../hooks/useQuestions'
 import { colors } from "../../utilities/styling-assets";
 import { hp } from "../../utilities/fontSizes";
@@ -17,7 +17,7 @@ const difficultyOptions = [
     'medium'
 ]
 
-const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) => {
+const StartQuizScreen: FunctionComponent<StartQuizScreenProps> = ({ navigation }) => {
 
     const { _getQuestions, loading } = useQuestions();
 
@@ -50,7 +50,7 @@ const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) =>
     const { amount, difficulty, type } = options
 
     //inputs
-    const inputs: Array<WelcomeScreenInputTypes> = [
+    const inputs: Array<StartQuizScreenInputTypes> = [
         {
             label: 'Difficulty',
             typeOfIcon: 'difficulty',
@@ -82,8 +82,8 @@ const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) =>
             editable={editable}
             onChangeText={(text) => _onChangeText(label.toLowerCase(), text)}
             dropDown={(hasDropDown && showDropDown) && <>
-                <View style={WelcomeScreenStyles.dropDown}>
-                    {difficultyOptions?.map((text, index) => <AppText onPress={() => _handleSelectedOption('difficulty', text)} readonly={false} key={index} size={15} color='black' text={text} style={WelcomeScreenStyles.options} />)}
+                <View style={StartQuizScreenStyles.dropDown}>
+                    {difficultyOptions?.map((text, index) => <AppText onPress={() => _handleSelectedOption('difficulty', text)} readonly={false} key={index} size={15} color='black' text={text} style={StartQuizScreenStyles.options} />)}
                 </View>
             </>}
         />)
@@ -99,11 +99,11 @@ const WelcomeScreen: FunctionComponent<WelcomeScreenProps> = ({ navigation }) =>
             <AppText font="Quicksand" weight="Bold" text={'Welcome to the'} align='center' size={26} color='white' />
             <Logo />
             {_renderInputs()}
-            <View style={WelcomeScreenStyles.buttonContainer}>
+            <View style={StartQuizScreenStyles.buttonContainer}>
                 <AppButton typeOfButton="mixed" text="True" onPress={() => _submit()} />
             </View>
         </AppScreen >
     );
 };
 
-export default WelcomeScreen;
+export default StartQuizScreen;

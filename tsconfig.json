@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5",
+    "target": "esnext",
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "esModuleInterop": true,
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "jsx": "react-native" /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"],

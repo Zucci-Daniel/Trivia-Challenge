@@ -42,7 +42,7 @@ export const useQuestions = () => {
       dispatch(reset());
     }
     if (success) {
-      navigation.navigate(routes.questionScreen);
+      navigation.navigate(routes.GamePlayScreen);
       dispatch(reset());
     }
   }, [error, success]);

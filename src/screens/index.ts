@@ -1,5 +1,5 @@
-import QuestionScreen from './question';
-import SummaryScreen from './summary';
-import WelcomeScreen from './welcome';
+import StartQuizScreen from './start-quiz';
+import ResultScreen from './result';
+import GamePlayScreen from './game-play';
 
-export {WelcomeScreen, SummaryScreen, QuestionScreen};
+export {StartQuizScreen, ResultScreen, GamePlayScreen};
