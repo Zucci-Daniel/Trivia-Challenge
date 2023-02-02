@@ -1,5 +1,4 @@
 import {StyleSheet, ViewStyle} from 'react-native';
-import {hp} from '../../utilities/fontSizes';
 import {colors, padding} from '../../utilities/styling-assets';
 
 type ScreenProps = {

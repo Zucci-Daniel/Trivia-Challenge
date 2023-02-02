@@ -82,7 +82,7 @@ export type ButtonProps = {
   text: string;
   onPress?: () => void;
   extraStyles?: ViewStyle;
-  typeOfButton: 'purple' | 'white' | 'mixed';
+  typeOfButton?: 'purple' | 'white' | 'mixed';
 };
 
 export type ClosButtonProps = {
