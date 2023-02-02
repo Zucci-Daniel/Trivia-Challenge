@@ -2,6 +2,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {ReactNode} from 'react';
 import {
   FlatListProps,
+  KeyboardType,
   ScrollViewProps,
   TextInputProps,
   TextProps,
@@ -63,15 +64,16 @@ export type COLOR_TYPES =
   | 'white'
   | 'darkOrange';
 
-export type WelcomeScreenInputTypes = {
+export type StartQuizScreenInputTypes = {
   label: string;
   typeOfIcon: 'difficulty' | 'star-rate';
   suffixIcon?: JSX.Element;
   value: string;
   editable?: boolean;
   hasDropDown?: boolean;
-  onPress: () => void;
+  onChangeText?: () => void;
   onPressSuffix?: () => void;
+  keyboardType?: KeyboardType;
 };
 
 export type typeOfButtonTypes = 'purple' | 'white' | 'mixed';
@@ -101,7 +103,7 @@ export type InputFieldProps = {
   label?: string;
   value: string;
   onPressSuffix?: () => void;
-  onPress?: () => void;
+  onChangeText?: (text: string) => void;
   placeHolderColor?: string;
   typeOfIcon?: 'difficulty' | 'star-rate';
 };
@@ -139,24 +141,24 @@ export type FlatScreenProps = {
   typeOfSvg?: 'white-bg' | 'purple-bg';
 } & Omit<FlatListProps<any>, 'children'>;
 
-export type QuestionScreenProps = {
+export type GamePlayScreenProps = {
   navigation: StackNavigationProp<
     Record<string, object | undefined>,
-    'questionScreen'
+    'GamePlayScreen'
   >;
 };
 
-export type SummaryScreenProps = {
+export type ResultScreenProps = {
   navigation: StackNavigationProp<
     Record<string, object | undefined>,
-    'summaryScreen'
+    'ResultScreen'
   >;
 };
 
-export type WelcomeScreenProps = {
+export type StartQuizScreenProps = {
   navigation: StackNavigationProp<
     Record<string, object | undefined>,
-    'welcomeScreen'
+    'StartQuizScreen'
   >;
 };
 
@@ -170,6 +172,34 @@ export type QuestionFooterProps = {
   onPressFalse: () => void;
   navigation: StackNavigationProp<
     Record<string, object | undefined>,
-    'questionScreen'
+    'GamePlayScreen'
   >;
+};
+
+export type AnsweredQuestionType = {
+  passed: boolean;
+  question: string;
+};
+
+export type StarRateArrayProps = {
+  id: number;
+  star: boolean;
+};
+
+/// request and response
+
+export type GetQuestionsPayload = {
+  // Define the shape of the payload here
+  amount: number;
+  difficulty: 'easy' | 'hard';
+  type: string; //should have been boolean (true/false),but then the endpoint doesn't return any data for this unless i use "boolean"
+};
+
+export type QuestionType = {
+  category: string;
+  correct_answer: string;
+  difficulty: string;
+  incorrect_answers: Array<string>;
+  question: string;
+  type: string;
 };

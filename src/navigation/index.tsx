@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import { routes } from '../constants/routes';
-import { QuestionScreen, SummaryScreen, WelcomeScreen } from '../screens';
+import { GamePlayScreen, ResultScreen, StartQuizScreen } from '../screens';
 import navigationService from '../utilities/navigationService';
 
 const Stack = createStackNavigator();
@@ -19,11 +19,11 @@ const AppNavigator = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={routes.welcomeScreen}>
+        initialRouteName={routes.StartQuizScreen}>
 
-        <Stack.Screen name={routes.welcomeScreen} component={WelcomeScreen} options={animation} />
-        <Stack.Screen name={routes.questionScreen} component={QuestionScreen} options={animation} />
-        <Stack.Screen name={routes.summaryScreen} component={SummaryScreen} options={animation} />
+        <Stack.Screen name={routes.StartQuizScreen} component={StartQuizScreen} options={animation} />
+        <Stack.Screen name={routes.GamePlayScreen} component={GamePlayScreen} options={animation} />
+        <Stack.Screen name={routes.ResultScreen} component={ResultScreen} options={animation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
