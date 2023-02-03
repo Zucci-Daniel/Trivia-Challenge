@@ -57,3 +57,7 @@ A basic loading feeling has been added for improved user experience.
 Error UI is not shown, but is important in a real-world app.
 
 The "type" parameter was initially thought to be either true or false, but the endpoint didn't return any data based on that. Flagging it as a boolean instead produced the desired
+
+since this is just a test app, i didn't bother perfecting on all screen-sizes, but this is difinetely what i'll do in a real world app.
+
+i tested for IOS, and Nokia 3.4
