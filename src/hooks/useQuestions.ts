@@ -1,4 +1,5 @@
 import {useSelector} from 'react-redux';
+import {Alert} from 'react-native';
 import {
   clearArrays,
   getQuestions,
@@ -38,7 +39,17 @@ export const useQuestions = () => {
 
   useEffect(() => {
     if (error) {
-      //show error state
+      Alert.alert(
+        'Failed',
+        'Failed to perform operation, maybe check your network',
+        [
+          {
+            text: 'OK',
+            onPress: () => {},
+          },
+        ],
+        {cancelable: false},
+      );
       dispatch(reset());
     }
     if (success) {

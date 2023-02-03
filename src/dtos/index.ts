@@ -12,3 +12,12 @@ export type QuestionType = {
   question: string;
   type: string;
 };
+
+type DataProps = {
+  response_code: number;
+  results: Array<QuestionType>;
+};
+
+export type QuestionResType = {
+  data: DataProps;
+};
