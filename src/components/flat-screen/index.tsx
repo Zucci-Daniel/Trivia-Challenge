@@ -3,10 +3,10 @@ import {
     FlatList,
     View
 } from 'react-native';
-import { PurpleBg, WhiteBg } from '../../constants/all-svgs';
-import { FlatScreenProps } from '../../dtos';
-import { hp } from '../../utilities/fontSizes';
+import { PurpleBg2, WhiteBg } from '../../constants/all-svgs';
+import { hp, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
+import { FlatScreenProps } from '../interface';
 import { FlatScreenStyles } from './styles';
 
 
@@ -25,7 +25,7 @@ const FlatScreen: FC<FlatScreenProps> = ({
         <>
             <View style={[FlatScreenStyles.container, { paddingHorizontal: shouldAddPadding ? hp(30) : 0, backgroundColor: typeOfSvg == 'white-bg' ? colors.white : colors.mainColor, }]}>
                 {showBackgroundSVG && <View style={FlatScreenStyles.absolute}>
-                    {typeOfSvg == 'white-bg' ? <WhiteBg style={FlatScreenStyles.svg} /> : <PurpleBg style={FlatScreenStyles.svg} />}
+                    {typeOfSvg == 'white-bg' ? <WhiteBg width={SCREEN_WIDTH} height={SCREEN_HEIGHT} style={FlatScreenStyles.svg} /> : <PurpleBg2 width={SCREEN_WIDTH} height={SCREEN_HEIGHT} style={FlatScreenStyles.svg} />}
                 </View>}
                 <View style={{ flex: 1 }}>
                     <FlatList

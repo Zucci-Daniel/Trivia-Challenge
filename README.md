@@ -1,5 +1,7 @@
 # TRIVIA README
 
+Please PULL FROM THE "master" branch
+
 PLEASE, THE SOLUTION I USE TO SOLVE A PROBLEM CAN BE IMPROVED, AND I'M OPEN TO SEEING DIFFERENT APPROACH AND THE "WHY" OF THEM ALL
 
 1.  Styles can also be created like this
@@ -63,4 +65,10 @@ export const elementStyles = StyleSheet.create({});
 
 22. initially, i thought the "type" params when making a request will be either true/false, but then the endpoint don't return anything based on that, i feel this was on purpose, and since flagging it as "boolean" get's me the desired data, i proceeded, as it's a test app.
 
-23.
+23. the detectTouch file is where i kept the hitSlop value, this allows users to tap a small action comfortable
+
+24. i ran a test for "questionServices" and it passed all cases
+
+25. if the "Triva" LOGO doesn't look aligned, it's from the design on the Logo on figma directly, it'll need some tweaking
+
+26. i noticed sometimes, copying the whole svg from designs omits some things, this is not a problem though, usually the Designer export and zips theses assets

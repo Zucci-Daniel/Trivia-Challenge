@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { View } from 'react-native';
-import { ProgressBarProps } from '../../dtos';
 import AppText from '../app-text';
+import { ProgressBarProps } from '../interface';
 import { ProgressBarStyling } from './styles';
 
 

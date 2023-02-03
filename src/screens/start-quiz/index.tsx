@@ -5,11 +5,12 @@ import InputField from "../../components/app-input";
 import AppScreen from "../../components/app-screen";
 import AppText from "../../components/app-text";
 import { CaretIcon, Logo } from "../../constants/all-svgs";
-import { GetQuestionsPayload, StartQuizScreenInputTypes, StartQuizScreenProps } from "../../dtos";
+import { GetQuestionsPayload } from "../../dtos";
 import { StartQuizScreenStyles } from "./styles";
 import { useQuestions } from '../../hooks/useQuestions'
 import { colors } from "../../utilities/styling-assets";
 import { hp } from "../../utilities/fontSizes";
+import { StartQuizScreenInputTypes, StartQuizScreenProps } from "../../components/interface";
 
 const difficultyOptions = [
     'hard',

@@ -7,7 +7,7 @@ import { colors } from '../../utilities/styling-assets';
 import { StarRate, WorldCup } from '../../constants/all-svgs';
 import { fontSz, hp } from '../../utilities/fontSizes';
 import { detectTouch } from '../../utilities/detectTouch';
-import { InputFieldProps } from '../../dtos';
+import { InputFieldProps } from '../interface';
 
 
 
@@ -29,11 +29,12 @@ function InputField(_props: InputFieldProps) {
         <>
             <KeyboardAvoidingView behavior="padding">
                 <View style={inputFieldStyle.labelContainer}>
-                    {typeOfIcon == 'star-rate' ? <StarRate /> : <WorldCup />}
+                    {typeOfIcon === 'star-rate' ? <StarRate /> : <WorldCup />}
                     <AppText weight='Bold' text={label} size={13} color='label' align='center' style={{ marginLeft: hp(11) }} />
                 </View>
                 <View style={inputFieldStyle.input}>
                     <TextInput
+                        returnKeyType='done'
                         placeholderTextColor={placeHolderColor}
                         style={inputFieldStyle.textInput}
                         editable={editable}

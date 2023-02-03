@@ -1,14 +1,14 @@
 import React, { FunctionComponent } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { ButtonBg, PurpleButtonBg } from "../../constants/all-svgs";
-import { ButtonProps, typeOfButtonTypes } from "../../dtos";
 import AppText from "../app-text";
+import { ButtonProps, typeOfButtonTypes } from "../interface";
 import { buttonStyles } from "./styles";
 
 
 
 
-const AppButton: FunctionComponent<ButtonProps> = ({ text = 'Text', onPress = () => null, typeOfButton = 'mixed', extraStyles }) => {
+const AppButton: FunctionComponent<ButtonProps> = ({ text = 'text', onPress = () => null, typeOfButton = 'mixed', extraStyles }) => {
 
     const _renderTypeOfButton = (typeOfButton: typeOfButtonTypes) => {
         switch (typeOfButton) {
@@ -24,7 +24,7 @@ const AppButton: FunctionComponent<ButtonProps> = ({ text = 'Text', onPress = ()
     }
 
     return (
-        <TouchableOpacity activeOpacity={.6} onPress={onPress} style={[buttonStyles.container, extraStyles]}>
+        <TouchableOpacity testID="touchable" activeOpacity={.6} onPress={onPress} style={[buttonStyles.container, extraStyles]}>
             {_renderTypeOfButton(typeOfButton)}
             <View style={buttonStyles.view}>
                 <AppText text={text} align='center' weight="Bold" color={typeOfButton == 'white' ? 'mainColor' : 'white'} size={15} style={{ textTransform: 'uppercase' }} />
