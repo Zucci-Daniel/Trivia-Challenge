@@ -186,6 +186,17 @@ export type StarRateArrayProps = {
   star: boolean;
 };
 
+export type ResultFooterProps = {
+  onPress?: () => void;
+};
+
+export type ResultHeaderProps = {
+  totalQuestions: number;
+  totalPassedQuestions: number;
+  onClose?: () => void;
+  children?: ReactNode;
+};
+
 /// request and response
 
 export type GetQuestionsPayload = {

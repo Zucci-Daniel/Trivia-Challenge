@@ -13,7 +13,7 @@ import { colors } from '../../utilities/styling-assets';
 import { GamePlayScreenStyles } from './styles';
 
 
-
+//since it's only used in this component.
 const Footer: FunctionComponent<QuestionFooterProps> = ({ onPressFalse, onPressTrue }) => {
     return (
         <View style={GamePlayScreenStyles.footer}>
@@ -118,7 +118,7 @@ const GamePlayScreen: FunctionComponent<GamePlayScreenProps> = ({ navigation }) 
                     onPressFalse={() => _handleNextOption(false)}
                     onPressTrue={() => _handleNextOption(true)}
                 />}
-                data={['']}
+                data={['']}//personal preference
                 renderItem={({ item, index }) => _renderQuestionCard()}
             />
         </>
