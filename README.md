@@ -3,11 +3,11 @@ Please pull from the "main" branch.
 
 git pull origin main
 
-===for android==
+===FOR ANDROID==
 yarn install
 npx react-native run-android
 
-===for ios=====
+===FOR IOS=====
 cd ios
 pod install
 cd ..
@@ -17,7 +17,7 @@ Please note that the solution used to solve a problem can be improved, and I'm o
 
 Styles can also be created like this:
 typescript
-Copy code
+
 const elementStyles = (prop?: type) => {
 return StyleSheet.create<ElementStylesProps>({
 element: {
@@ -56,9 +56,9 @@ I wrote a test for just questionServices file it's called questionServices.test.
 
 Padding and margin values are taken from the Figma design.
 
-The "5-star approach" was used for the results screen to provide a better user experience instead of displaying all 10,000 stars.
+The "5-star approach" was used for the results screen to provide a better user experience instead of displaying stars according to the questions (imagine we have 10,000 questions)
 
-Endpoints were separated for better organization in a real-world app with multiple endpoints and parameters.
+Endpoints strings was separated for better organization in a real-world app with multiple endpoints and parameters.
 
 The persisted store is cleared after a reload as it is not necessary to keep.
 
