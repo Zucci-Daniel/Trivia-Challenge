@@ -4,7 +4,7 @@ var widthPercentageToDP = responsiveScreen.widthPercentageToDP;
 var heightPercentageToDP = responsiveScreen.heightPercentageToDP;
 
 export const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} =
-  Dimensions.get('window');
+  Dimensions.get('screen');
 
 const pixelRatio = PixelRatio.get();
 const deviceHeight = Dimensions.get('window').height;
