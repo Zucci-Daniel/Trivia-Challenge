@@ -65,4 +65,4 @@ export const elementStyles = StyleSheet.create({});
 
 22. initially, i thought the "type" params when making a request will be either true/false, but then the endpoint don't return anything based on that, i feel this was on purpose, and since flagging it as "boolean" get's me the desired data, i proceeded, as it's a test app.
 
-23.
+23. the detectTouch file is where i kept the hitSlop value, this allows users to tap a small action comfortable
