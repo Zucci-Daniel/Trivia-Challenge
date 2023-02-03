@@ -70,3 +70,5 @@ export const elementStyles = StyleSheet.create({});
 24. i ran a test for "questionServices" and it passed all cases
 
 25. if the "Triva" LOGO doesn't look aligned, it's from the design on the Logo on figma directly, it'll need some tweaking
+
+26. i noticed sometimes, copying the whole svg from designs omits some things, this is not a problem though, usually the Designer export and zips theses assets
