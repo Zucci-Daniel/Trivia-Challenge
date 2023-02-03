@@ -4,6 +4,7 @@ import AppButton from '../../components/app-button';
 import CloseButton from '../../components/app-close-button';
 import AppText from '../../components/app-text';
 import FlatScreen from '../../components/flat-screen';
+import { AnsweredQuestionType, ResultFooterProps, ResultHeaderProps, ResultScreenProps, StarRateArrayProps } from '../../components/interface';
 import {
     ActiveStarIcon,
     Avatar,
@@ -11,9 +12,9 @@ import {
     InActiveStarIcon,
     PassedIcon,
 } from '../../constants/all-svgs';
-import { AnsweredQuestionType, CardProps, ResultFooterProps, ResultHeaderProps, ResultScreenProps, StarRateArrayProps } from '../../dtos';
 import { useQuestions } from '../../hooks/useQuestions';
 import { hp } from '../../utilities/fontSizes';
+import { CardProps } from '../../utilities/interface';
 import { colors } from '../../utilities/styling-assets';
 import { SummaryStyles } from './styles';
 

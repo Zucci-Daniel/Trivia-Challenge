@@ -5,8 +5,8 @@ import CloseButton from '../../components/app-close-button';
 import ProgressBar from '../../components/app-progress-bar';
 import AppText from '../../components/app-text';
 import FlatScreen from '../../components/flat-screen';
+import { AnsweredQuestionType, GamePlayScreenProps, QuestionFooterProps } from '../../components/interface';
 import { routes } from '../../constants/routes';
-import { AnsweredQuestionType, QuestionFooterProps, GamePlayScreenProps } from '../../dtos';
 import { useQuestions } from '../../hooks/useQuestions';
 import { hp } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
@@ -31,7 +31,7 @@ const Footer: FunctionComponent<QuestionFooterProps> = ({ onPressFalse, onPressT
 
 const GamePlayScreen: FunctionComponent<GamePlayScreenProps> = ({ navigation }) => {
 
-    const { questionsData, _setAnsweredQuestion } = useQuestions();
+    const { questionsData, _clearArrays, _setAnsweredQuestion } = useQuestions();
     const [answeredQuestions, setAnsweredQuestions] = useState<number>(0)
 
 
@@ -105,11 +105,14 @@ const GamePlayScreen: FunctionComponent<GamePlayScreenProps> = ({ navigation }) 
             action()
         }
     }
-
+    const _handleClose = () => {
+        _clearArrays()
+        navigation.goBack()
+    }
 
     return (
         <>
-            <CloseButton color={colors.mainColor} onClose={() => navigation.goBack()} />
+            <CloseButton color={colors.mainColor} onClose={() => _handleClose()} />
             <FlatScreen
                 shouldAddPadding={false}
                 HeaderComponent={<Header />}

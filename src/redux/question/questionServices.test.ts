@@ -36,7 +36,7 @@ describe('req_questions', () => {
   });
 
   it('should default to 10 questions if amount is not provided', async () => {
-    const payload: GetQuestionsPayload = {
+    const payload: any = {
       difficulty: 'easy',
       type: 'boolean',
     };

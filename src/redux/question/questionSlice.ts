@@ -1,9 +1,6 @@
-import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {
-  AnsweredQuestionType,
-  GetQuestionsPayload,
-  QuestionType,
-} from '../../dtos';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import {AnsweredQuestionType} from '../../components/interface';
+import {GetQuestionsPayload, QuestionType} from '../../dtos';
 import {req_questions} from './questionServices';
 
 type Question = {

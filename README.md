@@ -68,3 +68,5 @@ export const elementStyles = StyleSheet.create({});
 23. the detectTouch file is where i kept the hitSlop value, this allows users to tap a small action comfortable
 
 24. i ran a test for "questionServices" and it passed all cases
+
+25. if the "Triva" LOGO doesn't look aligned, it's from the design on the Logo on figma directly, it'll need some tweaking

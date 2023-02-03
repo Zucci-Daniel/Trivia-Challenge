@@ -1,4 +1,4 @@
-import {fontsizes, fontSz} from './fontSizes';
+import {fontSz} from './fontSizes';
 
 //content of this file can be further separated too.
 

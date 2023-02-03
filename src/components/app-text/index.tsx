@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import { AppTextProps, } from '../../dtos';
 import { fontSz, } from '../../utilities/fontSizes';
 import { colors } from '../../utilities/styling-assets';
+import { AppTextProps } from '../interface';
 import { GKTextStyles } from './styles';
 
 
