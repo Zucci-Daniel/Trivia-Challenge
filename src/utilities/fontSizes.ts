@@ -1,87 +1,63 @@
-import {PixelRatio, Dimensions} from 'react-native';
-var responsiveScreen = require('react-native-responsive-screen');
-var widthPercentageToDP = responsiveScreen.widthPercentageToDP;
-var heightPercentageToDP = responsiveScreen.heightPercentageToDP;
+import {Dimensions, PixelRatio} from 'react-native';
 
-export const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} =
-  Dimensions.get('screen');
+const {height: screenHeight, width: screenWidth} = Dimensions.get('screen');
 
-const pixelRatio = PixelRatio.get();
-const deviceHeight = Dimensions.get('window').height;
-const deviceWidth = Dimensions.get('window').width;
-const fontScale = Dimensions.get('window').fontScale;
+const frame = {height: 926, width: 428}; // Frame according to figma design
 
-export const hp = (val: number) => {
-  // get scaled height equivalent of design height
-  const num = val / 8.44;
-  return heightPercentageToDP(num);
+const widthBaseScale = screenWidth / frame.width;
+const heightBaseScale = screenHeight / frame.height;
+
+function normalize(size: number, based = 'width') {
+  const newSize =
+    based === 'height' ? size * heightBaseScale : size * widthBaseScale;
+  return Math.round(PixelRatio.roundToNearestPixel(newSize));
+}
+
+// for width  pixel
+const widthPixel = (size: number) => normalize(size, 'width');
+// for height  pixel
+const heightPixel = (size: number) => normalize(size, 'height');
+// for font  pixel
+const fontPixel = (size: number) => heightPixel(size);
+// for relative pixels
+const relativePixels = (size: number) => heightPixel(size);
+
+const heightPercentageToDP = (heightPercent: string | number) => {
+  // Parse string percentage input and convert it to number.
+  const elementHeight =
+    typeof heightPercent === 'number'
+      ? heightPercent
+      : Number.parseFloat(heightPercent);
+
+  // Use PixelRatio.roundToNearestPixel method in order to round the layout
+  // size (dp) to the nearest one that correspons to an integer number of pixels.
+  return PixelRatio.roundToNearestPixel((screenHeight * elementHeight) / 100);
+};
+const widthPercentageToDP = (widthPercent: string | number) => {
+  // Parse string percentage input and convert it to number.
+  const elementWidth =
+    typeof widthPercent === 'number'
+      ? widthPercent
+      : Number.parseFloat(widthPercent);
+
+  // Use PixelRatio.roundToNearestPixel method in order to round the layout
+  // size (dp) to the nearest one that correspons to an integer number of pixels.
+  return PixelRatio.roundToNearestPixel((screenWidth * elementWidth) / 100);
 };
 
-export const wp = (val: number) => {
-  // get scaled height equivalent of design width
-  const num = val / 3.88;
-  return widthPercentageToDP(num);
+export {
+  fontPixel as fp,
+  heightPixel as hp,
+  heightPercentageToDP as hpt,
+  relativePixels as px,
+  screenHeight as SCREEN_HEIGHT,
+  screenWidth as SCREEN_WIDTH,
+  widthPixel as wp,
+  widthPercentageToDP as wpt,
 };
 
 //we can use the function or just the object.
-export const fontSz = (sizeNum: number) => {
-  const size = sizeNum - fontScale * (fontScale < 1 ? 1 : 2);
-  if (pixelRatio >= 2 && pixelRatio < 3) {
-    // iphone 5s and older Androids
-    if (deviceWidth < 360) {
-      return size * 0.95;
-    }
-    // iphone 5
-    if (deviceHeight < 667) {
-      return size;
-      // iphone 6-6s
-    }
-    if (deviceHeight >= 667 && deviceHeight <= 735) {
-      return size * 1.15;
-    }
-    // older phablets
-    return size * 1.25;
-  }
-
-  if (pixelRatio >= 3 && pixelRatio < 3.5) {
-    // catch Android font scaling on small machines
-    // where pixel ratio / font scale ratio => 3:3
-    if (deviceWidth <= 360) {
-      return size;
-    }
-    // Catch other weird android width sizings
-    if (deviceHeight < 667) {
-      return size * 1.15;
-      // catch in-between size Androids and scale font up
-      // a tad but not too much
-    }
-    if (deviceHeight >= 667 && deviceHeight <= 735) {
-      return size * 1.2;
-    }
-    // catch larger devices
-    // ie iphone 6s plus / 7 plus / mi note 等等
-    return size * 1.27;
-  }
-  if (pixelRatio >= 3.5) {
-    // catch Android font scaling on small machines
-    // where pixel ratio / font scale ratio => 3:3
-    if (deviceWidth <= 360) {
-      return size;
-      // Catch other smaller android height sizings
-    }
-    if (deviceHeight < 667) {
-      return size * 1.2;
-      // catch in-between size Androids and scale font up
-      // a tad but not too much
-    }
-    if (deviceHeight >= 667 && deviceHeight <= 735) {
-      return size * 1.25;
-    }
-    // catch larger phablet devices
-    return size * 1.4;
-  }
-  return size;
-};
+export const fontSz = fontPixel;
 
 export const fontsizes = {
   xsmini: {

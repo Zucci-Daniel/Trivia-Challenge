@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { TouchableOpacity, View } from "react-native";
-import { ButtonBg, PurpleButtonBg } from "../../constants/all-svgs";
+import { ButtonBg, PurpleButtonBg, TransparentButtonBg } from "../../constants/all-svgs";
 import AppText from "../app-text";
 import { ButtonProps, typeOfButtonTypes } from "../interface";
 import { buttonStyles } from "./styles";
@@ -17,9 +17,9 @@ const AppButton: FunctionComponent<ButtonProps> = ({ text = 'text', onPress = ()
             case 'purple':
                 return <PurpleButtonBg style={buttonStyles.svg} width={'100%'} height={'100%'} />
             case 'white':
-                return <View style={buttonStyles.normalButton} />
+                return <TransparentButtonBg style={buttonStyles.svg} width={'100%'} height={'100%'} />
             default:
-                return <View style={buttonStyles.normalButton} />;
+                return <TouchableOpacity style={buttonStyles.normalButton} />;
         }
     }
 

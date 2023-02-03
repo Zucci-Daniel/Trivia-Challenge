@@ -29,7 +29,7 @@ export const GamePlayScreenStyles =
     },
     footer: {
       height: undefined,
-      padding: genericGamePlayScreenPadding,
+      paddingVertical: genericGamePlayScreenPadding,
       width: '100%',
     },
     questionContainer: {

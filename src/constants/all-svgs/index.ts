@@ -8,6 +8,7 @@ import StarRate from '../../assets/svgs/star-rate.svg';
 import ActiveStarIcon from '../../assets/svgs/star-active.svg';
 import StarIcon from '../../assets/svgs/star-active.svg';
 import InActiveStarIcon from '../../assets/svgs/star-inactive.svg';
+import TransparentButtonBg from '../../assets/svgs/transparent-button-bg.svg';
 import WorldCup from '../../assets/svgs/worldcup.svg';
 import CaretIcon from '../../assets/svgs/caret-down.svg';
 import CloseIcon from '../../assets/svgs/close.svg';
@@ -17,6 +18,7 @@ import Avatar from '../../assets/svgs/avatar.svg';
 export {
   Avatar,
   ButtonBg,
+  TransparentButtonBg,
   WhiteBg,
   PurpleBg,
   Logo,
