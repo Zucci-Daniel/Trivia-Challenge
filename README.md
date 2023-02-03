@@ -60,3 +60,7 @@ export const elementStyles = StyleSheet.create({});
 20. decided to add a basic loading feeling,
 
 21. didn't bother about showing error UI, but in real world cases, it is important.
+
+22. initially, i thought the "type" params when making a request will be either true/false, but then the endpoint don't return anything based on that, i feel this was on purpose, and since flagging it as "boolean" get's me the desired data, i proceeded, as it's a test app.
+
+23.
