@@ -1,12 +1,11 @@
-# TRIVIA README
+Trivia README
+Please pull from the "master" branch.
 
-Please PULL FROM THE "master" branch
+Please note that the solution used to solve a problem can be improved, and I'm open to seeing different approaches and understanding the reasoning behind them.
 
-PLEASE, THE SOLUTION I USE TO SOLVE A PROBLEM CAN BE IMPROVED, AND I'M OPEN TO SEEING DIFFERENT APPROACH AND THE "WHY" OF THEM ALL
-
-1.  Styles can also be created like this
-    /\*\*
-
+Styles can also be created like this:
+typescript
+Copy code
 const elementStyles = (prop?: type) => {
 return StyleSheet.create<ElementStylesProps>({
 element: {
@@ -15,60 +14,46 @@ property: 'value',
 });
 };
 
-where "ElementStylesProps" are the type difinition of each styling object expected to be recieved in this component. This gives room for adding dynamic values in other components too.
-But for simplicity, i'll proceed with the traditional style approach.
-/**
-export const elementStyles = StyleSheet.create({});
-**/
+Where "ElementStylesProps" are the type definitions of each styling object expected to be received in this component. This gives room for adding dynamic values in other components. However, for simplicity, I will proceed with the traditional style approach.
 
-\*\*/
+I choose to map inputs from an array to keep my return UI clean, concise, and dry.
 
-2. for my inputs, i choose to map them from array, this keeps my return UI very clean,concise and dry😅,
+I like to configure a TextComponent that will be reusable throughout the app. This helps prevent cluttered text styles and keeps the code organized.
 
-3. i personally i love to configure a TextComponent that will be reusable everywhere in the app, i don't like litered text styles, it make my codes ugly.
+When styling, if the property of an element or component will only be used once or twice, I prefer to declare it inline. If it will be used more frequently, I will separate it into a separate object.
 
-4. when styling, if the property i that element or component is just gonna be 1 or at most 2, i rather declare it inline, otherwise, i will separate them entirely
+Sometimes it is simpler to import SVGs directly from a file, but there are other ways to use SVGs such as creating a component.
 
-5. sometimes, it's just simpler to import my svg directly from one file and make use of them, however, there are many aways i can think of to use SVGs, i can make it component too.
+In a real-world app, I prefer to keep all static text in a translated file for easier language changes for users around the world.
 
-6. Although this is a test evaluation task, but in a real world app, i prefer to keep all static text accross the app in a translated file, where i can just import them, this is super useful if we want to change language for users accross the world.
+The comments in the "fontSize.ts" file show how font sizes are calculated for different devices.
 
-7. the comments in the fontSize.ts file is just to show you how i calculate fontsizes across different devices
+I like to keep all Data Transfer Object (DTO) definitions in one folder for readability and isolation.
 
-8. i love keeping all DTOs (DATA TRANSFER OBJECT) definitions in one folder, it's more readable and isolated
+The UI is kept concise and the logic and data fetching are encapsulated in a custom hook.
 
-9. make the UI concise, the logic and how data is fetched is encapsulated and kept in a custom hook.
+The bottom margin between the "Welcome to the" and the "Trivia" logo in the StartQuiz screen had to be adjusted due to the logo having more padding than it appeared in the design.
 
-10. for the bottom margin btwn the "welcome to the" and the "trivia" Logo inside the StartQuiz screen, i found out that the logo exported as svg had alot of padding in it, which is different from the way it appears on the UI design, proceeded anyways.
+In FlatList screens, I try to isolate components that don't need to be re-rendered to improve performance.
 
-11. for Flatlist screens, i try as much as possible to isolate component that don't need to be rerendered all over again, they're in the same file but outside of the main Component.
+For more flexibility, simplicity, and readability, I used Redux Toolkit.
 
-12. for more flexibilty,simplicity and readability, i used redux toolkit
+The "em" value is calculated based on the font size.
 
-13. calculated "em" based on fontSize
+Padding and margin values are taken from the Figma design.
 
-14. padding and margin are gotten from the figma design
+The "5-star approach" was used for the results screen to provide a better user experience instead of displaying all 10,000 stars.
 
-15. went ahead with the "5 Star approach" because, assumming we have 10,000 questions, it'll be a bad UX to display all 10k stars in the result screen and count the number of passed vs all questions. so that's why i choosed this approach. (hopefully, you like this approach too.)
+Endpoints were separated for better organization in a real-world app with multiple endpoints and parameters.
 
-16. for the endpoint given, i decided to separate, because i want to mimick the exact way i do this in a big app with alot of endpoint and params to be passed.
+The persisted store is cleared after a reload as it is not necessary to keep.
 
-17. clearing the persisted store after a reload because i don't find it neccessary to keep.
+The navigation animation was designed to make navigating to screens feel like they are appearing on top of each other for a better user experience.
 
-18. for the navigation animation, wanted to fit the app UX by making navigating to screens as if they appear ontop of each other, this is a beautiful experience for me.
+The "Play Again" button redirects the user to the StartQuiz screen so they can choose a difficulty level or number of questions. Another option would have been to store the parameters in the store initially and automatically replay the game.
 
-19. for the "play again", i redirected them to the StartQuiz screen, so they can choose a difficulty level or amount of questions, another way would have been to store the params in the store initially and automatically replay the game without re-choosing.
+A basic loading feeling has been added for improved user experience.
 
-20. decided to add a basic loading feeling,
+Error UI is not shown, but is important in a real-world app.
 
-21. didn't bother about showing error UI, but in real world cases, it is important.
-
-22. initially, i thought the "type" params when making a request will be either true/false, but then the endpoint don't return anything based on that, i feel this was on purpose, and since flagging it as "boolean" get's me the desired data, i proceeded, as it's a test app.
-
-23. the detectTouch file is where i kept the hitSlop value, this allows users to tap a small action comfortable
-
-24. i ran a test for "questionServices" and it passed all cases
-
-25. if the "Triva" LOGO doesn't look aligned, it's from the design on the Logo on figma directly, it'll need some tweaking
-
-26. i noticed sometimes, copying the whole svg from designs omits some things, this is not a problem though, usually the Designer export and zips theses assets
+The "type" parameter was initially thought to be either true or false, but the endpoint didn't return any data based on that. Flagging it as a boolean instead produced the desired
