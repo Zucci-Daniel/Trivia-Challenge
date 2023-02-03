@@ -1,5 +1,5 @@
 Trivia README
-Please pull from the "master" branch.
+Please pull from the "main" branch.
 
 Please note that the solution used to solve a problem can be improved, and I'm open to seeing different approaches and understanding the reasoning behind them.
 
