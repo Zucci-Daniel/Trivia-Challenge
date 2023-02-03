@@ -1,4 +1,8 @@
 import {PixelRatio, Dimensions} from 'react-native';
+var responsiveScreen = require('react-native-responsive-screen');
+var widthPercentageToDP = responsiveScreen.widthPercentageToDP;
+var heightPercentageToDP = responsiveScreen.heightPercentageToDP;
+
 export const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} =
   Dimensions.get('window');
 
@@ -6,11 +10,6 @@ const pixelRatio = PixelRatio.get();
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 const fontScale = Dimensions.get('window').fontScale;
-
-import {
-  widthPercentageToDP,
-  heightPercentageToDP,
-} from 'react-native-responsive-screen';
 
 export const hp = (val: number) => {
   // get scaled height equivalent of design height

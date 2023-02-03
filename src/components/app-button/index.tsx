@@ -24,7 +24,7 @@ const AppButton: FunctionComponent<ButtonProps> = ({ text = 'Text', onPress = ()
     }
 
     return (
-        <TouchableOpacity activeOpacity={.6} onPress={onPress} style={[buttonStyles.container, extraStyles]}>
+        <TouchableOpacity testID="touchable" activeOpacity={.6} onPress={onPress} style={[buttonStyles.container, extraStyles]}>
             {_renderTypeOfButton(typeOfButton)}
             <View style={buttonStyles.view}>
                 <AppText text={text} align='center' weight="Bold" color={typeOfButton == 'white' ? 'mainColor' : 'white'} size={15} style={{ textTransform: 'uppercase' }} />
