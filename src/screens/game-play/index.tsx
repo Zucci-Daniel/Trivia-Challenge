@@ -112,7 +112,7 @@ const GamePlayScreen: FunctionComponent<GamePlayScreenProps> = ({ navigation }) 
 
     return (
         <>
-            <CloseButton color={colors.mainColor} onClose={() => _handleClose()} />
+            <CloseButton color={colors.mainColor} extraStyles={{ right: hp(21), top: hp(47.8) }} onClose={() => _handleClose()} />
             <FlatScreen
                 shouldAddPadding={false}
                 HeaderComponent={<Header />}
