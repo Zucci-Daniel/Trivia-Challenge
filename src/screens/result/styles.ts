@@ -58,8 +58,6 @@ export const SummaryStyles = StyleSheet.create<SummaryStylesProps>({
     paddingBottom: hp(19),
   },
   footer: {
-    justifyContent: 'center',
-    alignItems: 'center',
     paddingVertical: hp(27),
   },
   separator: {height: hp(16), backgroundColor: 'transparent', width: '100%'},

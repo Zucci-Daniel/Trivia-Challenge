@@ -21,11 +21,17 @@ const initialState: Question = {
 
 export const getQuestions = createAsyncThunk(
   'question/getQuestions',
-  async (payload: GetQuestionsPayload) => {
+  async (payload: GetQuestionsPayload, thunkAPI) => {
     try {
       return await req_questions(payload);
-    } catch (error) {
-      return error.message || error.toString();
+    } catch (error: any) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
     }
   },
 );

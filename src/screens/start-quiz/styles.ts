@@ -14,7 +14,6 @@ export const StartQuizScreenStyles =
     buttonContainer: {
       flex: 1,
       marginTop: hp(87),
-      paddingBottom: hp(41),
       justifyContent: 'center',
       alignItems: 'center',
     },

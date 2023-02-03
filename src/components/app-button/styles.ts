@@ -14,7 +14,6 @@ export const buttonStyles = StyleSheet.create<ButtonStylesProps>({
     justifyContent: 'center',
     position: 'relative',
     alignItems: 'center',
-    alignContent: 'stretch',
     height: hp(70),
     width: '100%',
   },
