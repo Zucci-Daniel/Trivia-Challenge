@@ -6,6 +6,7 @@ type StartQuizScreenStylesProps = {
   buttonContainer: ViewStyle;
   options: TextStyle;
   dropDown: ViewStyle;
+  logo: ViewStyle;
 };
 
 export const StartQuizScreenStyles =
@@ -14,7 +15,8 @@ export const StartQuizScreenStyles =
       flex: 1,
       marginTop: hp(87),
       paddingBottom: hp(41),
-      justifyContent: 'flex-end',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     dropDown: {
       height: undefined,
@@ -25,4 +27,10 @@ export const StartQuizScreenStyles =
       borderRadius: 5,
     },
     options: {marginBottom: hp(10), textTransform: 'capitalize'},
+    logo: {
+      width: '100%',
+      height: hp(248),
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   });

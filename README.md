@@ -1,6 +1,18 @@
 Trivia README
 Please pull from the "main" branch.
 
+git pull origin main
+
+===for android==
+yarn install
+npx react-native run-android
+
+===for ios=====
+cd ios
+pod install
+cd ..
+npm run ios
+
 Please note that the solution used to solve a problem can be improved, and I'm open to seeing different approaches and understanding the reasoning behind them.
 
 Styles can also be created like this:
@@ -39,6 +51,8 @@ In FlatList screens, I try to isolate components that don't need to be re-render
 For more flexibility, simplicity, and readability, I used Redux Toolkit.
 
 The "em" value is calculated based on the font size.
+
+I wrote a test for just questionServices file it's called questionServices.test.ts
 
 Padding and margin values are taken from the Figma design.
 
