@@ -82,7 +82,7 @@ export type ButtonProps = {
   text: string;
   onPress?: () => void;
   extraStyles?: ViewStyle;
-  typeOfButton: 'purple' | 'white' | 'mixed';
+  typeOfButton?: 'purple' | 'white' | 'mixed';
 };
 
 export type ClosButtonProps = {
@@ -184,6 +184,17 @@ export type AnsweredQuestionType = {
 export type StarRateArrayProps = {
   id: number;
   star: boolean;
+};
+
+export type ResultFooterProps = {
+  onPress?: () => void;
+};
+
+export type ResultHeaderProps = {
+  totalQuestions: number;
+  totalPassedQuestions: number;
+  onClose?: () => void;
+  children?: ReactNode;
 };
 
 /// request and response

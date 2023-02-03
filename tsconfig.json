@@ -9,7 +9,7 @@
     "rootDir": "src",
     "jsx": "react-native" /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/components/app-button/index.test.tsx"],
   "exclude": ["node_modules"],
   "types": ["node"]
 }
