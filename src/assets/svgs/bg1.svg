@@ -1,0 +1,44 @@
+<svg width="396" height="828" viewBox="0 0 396 828" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_0_6)">
+<rect x="8" y="8" width="380" height="812" rx="20" fill="#4751C0"/>
+<path opacity="0.4" d="M375.381 773.026C412.903 668.641 314.45 688.815 371.923 602.485C466.173 502.321 480.561 681.389 583.704 902.399C686.847 1123.41 525.878 1004.85 418.574 919.376C433.858 905.071 338.792 874.816 375.381 773.026Z" fill="#A1A7E3"/>
+<mask id="mask0_0_6" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-26" y="750" width="131" height="123">
+<ellipse cx="39.5" cy="811.5" rx="47.5" ry="75.5" transform="rotate(-48.9123 39.5 811.5)" fill="#4953BE"/>
+</mask>
+<g mask="url(#mask0_0_6)">
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -9.69438 783.248)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -14.4465 774.702)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -19.1984 766.157)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -4.9424 791.794)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -0.19043 800.339)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 4.56166 808.885)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 9.31363 817.43)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 19.5621 846.683)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 14.81 838.138)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 10.058 829.592)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 24.3141 855.229)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 29.066 863.775)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 33.8181 872.32)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 38.5701 880.866)" fill="white"/>
+</g>
+<mask id="mask1_0_6" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="366" y="70" width="98" height="151">
+<ellipse cx="415.122" cy="145.421" rx="47.5" ry="75.5" transform="rotate(8.5989 415.122 145.421)" fill="#4953BE"/>
+</mask>
+<g mask="url(#mask1_0_6)">
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 374.736 147.501)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 379.392 138.903)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 384.047 130.304)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 370.08 156.1)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 365.425 164.698)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 360.769 173.297)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 356.113 181.895)" fill="#FF8686"/>
+</g>
+<path opacity="0.4" d="M26.2274 173.949C-0.408372 258.991 77.947 239.512 34.6941 310.727C-37.6189 394.274 -55.1432 251.016 -145.311 77.052C-235.478 -96.9121 -102.312 -7.11497 -13.3272 57.9152C-25.1183 69.9076 52.2011 91.0214 26.2274 173.949Z" fill="#A1A7E3"/>
+</g>
+<rect x="4" y="4" width="388" height="820" rx="24" stroke="white" stroke-width="8"/>
+<defs>
+<clipPath id="clip0_0_6">
+<rect x="8" y="8" width="380" height="812" rx="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
