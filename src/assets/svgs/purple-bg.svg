@@ -1,0 +1,43 @@
+<svg width="380" height="812" viewBox="0 0 380 812" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_41_8)">
+<rect width="380" height="812" fill="#4751C0"/>
+<path opacity="0.4" d="M367.381 765.026C404.903 660.641 306.449 680.815 363.922 594.485C458.173 494.321 472.561 673.389 575.704 894.399C678.846 1115.41 517.878 996.85 410.574 911.376C425.858 897.071 330.792 866.816 367.381 765.026Z" fill="#A1A7E3"/>
+<mask id="mask0_41_8" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-34" y="742" width="131" height="123">
+<ellipse cx="31.4993" cy="803.5" rx="47.5" ry="75.5" transform="rotate(-48.9123 31.4993 803.5)" fill="#4953BE"/>
+</mask>
+<g mask="url(#mask0_41_8)">
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -17.6953 775.248)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -22.4473 766.702)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -27.1992 758.157)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -12.9434 783.793)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -8.19141 792.339)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 -3.43945 800.885)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 1.3125 809.43)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 11.5605 838.683)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 6.80859 830.138)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 2.05664 821.592)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 16.3125 847.229)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 21.0645 855.774)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 25.8164 864.32)" fill="white"/>
+<rect width="193.596" height="2.89" transform="matrix(0.798849 -0.601532 0.485994 0.873962 30.5703 872.865)" fill="white"/>
+</g>
+<mask id="mask1_41_8" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="358" y="62" width="98" height="151">
+<ellipse cx="407.121" cy="137.421" rx="47.5" ry="75.5" transform="rotate(8.5989 407.121 137.421)" fill="#4953BE"/>
+</mask>
+<g mask="url(#mask1_41_8)">
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 366.736 139.501)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 371.391 130.903)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 376.047 122.304)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 362.08 148.1)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 357.424 156.698)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 352.768 165.297)" fill="#FF8686"/>
+<rect width="193.596" height="2.89" transform="matrix(0.936479 0.350723 -0.47614 0.879369 348.113 173.895)" fill="#FF8686"/>
+</g>
+<path opacity="0.4" d="M18.2271 165.949C-8.40868 250.991 69.9467 231.512 26.6938 302.727C-45.6192 386.274 -63.1435 243.016 -153.311 69.052C-243.478 -104.912 -110.313 -15.115 -21.3275 49.9152C-33.1186 61.9076 44.2008 83.0214 18.2271 165.949Z" fill="#A1A7E3"/>
+</g>
+<defs>
+<clipPath id="clip0_41_8">
+<rect width="380" height="812" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "jsx": "react-native" /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+  },
+  "include": ["src/**/*.ts", "src/components/app-button/index.test.tsx"],
+  "exclude": ["node_modules"],
+  "types": ["node"]
+}
