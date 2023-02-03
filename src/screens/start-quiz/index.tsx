@@ -98,7 +98,9 @@ const StartQuizScreen: FunctionComponent<StartQuizScreenProps> = ({ navigation }
             onBlur={_handleCloseDropDown}
         >
             <AppText font="Quicksand" weight="Bold" text={'Welcome to the'} align='center' size={26} color='white' />
-            <Logo />
+            <View style={StartQuizScreenStyles.logo}>
+                <Logo />
+            </View>
             {_renderInputs()}
             <View style={StartQuizScreenStyles.buttonContainer}>
                 <AppButton typeOfButton="mixed" text="True" onPress={() => _submit()} />
