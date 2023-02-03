@@ -34,3 +34,29 @@ export const elementStyles = StyleSheet.create({});
 7. the comments in the fontSize.ts file is just to show you how i calculate fontsizes across different devices
 
 8. i love keeping all DTOs (DATA TRANSFER OBJECT) definitions in one folder, it's more readable and isolated
+
+9. make the UI concise, the logic and how data is fetched is encapsulated and kept in a custom hook.
+
+10. for the bottom margin btwn the "welcome to the" and the "trivia" Logo inside the StartQuiz screen, i found out that the logo exported as svg had alot of padding in it, which is different from the way it appears on the UI design, proceeded anyways.
+
+11. for Flatlist screens, i try as much as possible to isolate component that don't need to be rerendered all over again, they're in the same file but outside of the main Component.
+
+12. for more flexibilty,simplicity and readability, i used redux toolkit
+
+13. calculated "em" based on fontSize
+
+14. padding and margin are gotten from the figma design
+
+15. went ahead with the "5 Star approach" because, assumming we have 10,000 questions, it'll be a bad UX to display all 10k stars in the result screen and count the number of passed vs all questions. so that's why i choosed this approach. (hopefully, you like this approach too.)
+
+16. for the endpoint given, i decided to separate, because i want to mimick the exact way i do this in a big app with alot of endpoint and params to be passed.
+
+17. clearing the persisted store after a reload because i don't find it neccessary to keep.
+
+18. for the navigation animation, wanted to fit the app UX by making navigating to screens as if they appear ontop of each other, this is a beautiful experience for me.
+
+19. for the "play again", i redirected them to the StartQuiz screen, so they can choose a difficulty level or amount of questions, another way would have been to store the params in the store initially and automatically replay the game without re-choosing.
+
+20. decided to add a basic loading feeling,
+
+21. didn't bother about showing error UI, but in real world cases, it is important.

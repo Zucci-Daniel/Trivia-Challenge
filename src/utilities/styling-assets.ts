@@ -1,5 +1,7 @@
 import {fontsizes, fontSz} from './fontSizes';
 
+//content of this file can be further separated too.
+
 //incase we ever need to use a padding/margin number that is not repeated twice,
 export const addPadding = (number: number) => fontSz(number ? number : 10);
 export const addMargin = (number: number) => fontSz(number ? number : 10);
